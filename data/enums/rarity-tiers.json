@@ -1,46 +1,14 @@
 {
-    "version": 1,
-    "kind": "rarityTiers",
-    "description": "Rarity tier ids used across weapons, components, blueprints, enchantments and materia items.",
-    "values": [
-      {
-        "id": 0,
-        "key": "none",
-        "name": "None",
-        "enabled": true,
-        "notes": "Used where a recipe or base entry carries no rarity display tier."
-      },
-      {
-        "id": 1,
-        "key": "common",
-        "name": "Common",
-        "enabled": true
-      },
-      {
-        "id": 2,
-        "key": "rare",
-        "name": "Rare",
-        "enabled": true
-      },
-      {
-        "id": 3,
-        "key": "epic",
-        "name": "Epic",
-        "enabled": true
-      },
-      {
-        "id": 4,
-        "key": "legendary",
-        "name": "Legendary",
-        "enabled": false,
-        "notes": "Reserved for future content."
-      },
-      {
-        "id": 5,
-        "key": "mythic",
-        "name": "Mythic",
-        "enabled": false,
-        "notes": "Reserved for future content."
-      }
-    ]
-  }
+  "version": 1,
+  "kind": "rarityTiers",
+  "description": "Offchain display mapping for rarity tier integers currently used in live Inpinity City content.",
+  "values": [
+    { "id": 0, "key": "none", "name": "None", "enabled": true },
+    { "id": 1, "key": "common", "name": "Common", "enabled": true, "notes": "Confirmed live via Iron Sword recipe and instance." },
+    { "id": 2, "key": "rare", "name": "Rare", "enabled": true, "notes": "Confirmed live via Crystal Bow, several components, enchantments and materia." },
+    { "id": 3, "key": "epic", "name": "Epic", "enabled": true, "notes": "Confirmed live via Plasma Rifle and Resonance Materia." },
+    { "id": 4, "key": "legendary", "name": "Legendary", "enabled": false },
+    { "id": 5, "key": "mythic", "name": "Mythic", "enabled": false }
+  ],
+  "notes": "These are offchain labels for integer values currently used onchain."
+}

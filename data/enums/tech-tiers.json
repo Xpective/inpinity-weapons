@@ -1,49 +1,13 @@
 {
-    "version": 1,
-    "kind": "techTiers",
-    "description": "Tech tier ids used by the live Inpinity City crafting and weapon system.",
-    "values": [
-      {
-        "id": 1,
-        "key": "primitive",
-        "name": "Primitive",
-        "enabled": true,
-        "notes": "Confirmed live via Iron Sword and early components."
-      },
-      {
-        "id": 2,
-        "key": "refined",
-        "name": "Refined",
-        "enabled": true,
-        "notes": "Confirmed live via Crystal Bow and Crystal Core."
-      },
-      {
-        "id": 3,
-        "key": "advanced",
-        "name": "Advanced",
-        "enabled": true,
-        "notes": "Confirmed live via Stabilizer and Resonance Grip."
-      },
-      {
-        "id": 4,
-        "key": "high-tech",
-        "name": "High-Tech",
-        "enabled": true,
-        "notes": "Confirmed live via Plasma Rifle, Plasma Chamber and Energy Coil."
-      },
-      {
-        "id": 5,
-        "key": "experimental",
-        "name": "Experimental",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 6,
-        "key": "mythic-tech",
-        "name": "Mythic Tech",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      }
-    ]
-  }
+  "version": 1,
+  "kind": "techTiers",
+  "description": "Project tech tier mapping used by live Inpinity City weapons, components, blueprints and recipes.",
+  "values": [
+    { "id": 1, "key": "primitive", "name": "Primitive", "enabled": true, "notes": "Confirmed live via Iron Sword and early components." },
+    { "id": 2, "key": "refined", "name": "Refined", "enabled": true, "notes": "Confirmed live via Crystal Bow and Crystal Core." },
+    { "id": 3, "key": "advanced", "name": "Advanced", "enabled": true, "notes": "Confirmed live via Stabilizer and Resonance Grip." },
+    { "id": 4, "key": "high-tech", "name": "High-Tech", "enabled": true, "notes": "Confirmed live via Plasma Rifle, Plasma Chamber and Energy Coil." },
+    { "id": 5, "key": "experimental", "name": "Experimental", "enabled": false },
+    { "id": 6, "key": "mythic-tech", "name": "Mythic Tech", "enabled": false }
+  ]
+}

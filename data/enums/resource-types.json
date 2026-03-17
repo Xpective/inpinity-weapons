@@ -1,67 +1,17 @@
 {
-    "version": 1,
-    "kind": "resourceTypes",
-    "description": "Canonical resource ids for the Inpinity ecosystem. These ids must stay aligned with the live ResourceToken contract.",
-    "values": [
-      {
-        "id": 0,
-        "key": "oil",
-        "name": "OIL",
-        "enabled": true
-      },
-      {
-        "id": 1,
-        "key": "lemons",
-        "name": "LEMONS",
-        "enabled": true
-      },
-      {
-        "id": 2,
-        "key": "iron",
-        "name": "IRON",
-        "enabled": true
-      },
-      {
-        "id": 3,
-        "key": "gold",
-        "name": "GOLD",
-        "enabled": true
-      },
-      {
-        "id": 4,
-        "key": "platinum",
-        "name": "PLATINUM",
-        "enabled": true
-      },
-      {
-        "id": 5,
-        "key": "copper",
-        "name": "COPPER",
-        "enabled": true
-      },
-      {
-        "id": 6,
-        "key": "crystal",
-        "name": "CRYSTAL",
-        "enabled": true
-      },
-      {
-        "id": 7,
-        "key": "obsidian",
-        "name": "OBSIDIAN",
-        "enabled": true
-      },
-      {
-        "id": 8,
-        "key": "mysterium",
-        "name": "MYSTERIUM",
-        "enabled": true
-      },
-      {
-        "id": 9,
-        "key": "aether",
-        "name": "AETHER",
-        "enabled": true
-      }
-    ]
-  }
+  "version": 1,
+  "kind": "resourceTypes",
+  "description": "Canonical resource ids for the Inpinity ecosystem. These ids must stay aligned with the live ResourceToken contract.",
+  "values": [
+    { "id": 0, "key": "oil", "name": "OIL", "enabled": true },
+    { "id": 1, "key": "lemons", "name": "LEMONS", "enabled": true },
+    { "id": 2, "key": "iron", "name": "IRON", "enabled": true },
+    { "id": 3, "key": "gold", "name": "GOLD", "enabled": true },
+    { "id": 4, "key": "platinum", "name": "PLATINUM", "enabled": true },
+    { "id": 5, "key": "copper", "name": "COPPER", "enabled": true },
+    { "id": 6, "key": "crystal", "name": "CRYSTAL", "enabled": true },
+    { "id": 7, "key": "obsidian", "name": "OBSIDIAN", "enabled": true },
+    { "id": 8, "key": "mysterium", "name": "MYSTERIUM", "enabled": true },
+    { "id": 9, "key": "aether", "name": "AETHER", "enabled": true }
+  ]
+}

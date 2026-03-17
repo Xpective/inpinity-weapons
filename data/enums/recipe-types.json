@@ -1,42 +1,13 @@
 {
-    "version": 1,
-    "kind": "recipeOutputKinds",
-    "description": "Recipe output kinds used by the live CityCrafting contract and reserved future extensions.",
-    "values": [
-      {
-        "id": 1,
-        "key": "blueprint",
-        "name": "Blueprint",
-        "enabled": false,
-        "notes": "Reserved for blueprint-oriented recipe outputs."
-      },
-      {
-        "id": 2,
-        "key": "component",
-        "name": "Component",
-        "enabled": true,
-        "notes": "Confirmed live via recipes 1-9."
-      },
-      {
-        "id": 3,
-        "key": "enchantment-item",
-        "name": "Enchantment Item",
-        "enabled": false,
-        "notes": "Reserved for future recipe outputs."
-      },
-      {
-        "id": 4,
-        "key": "weapon-prototype",
-        "name": "Weapon Prototype",
-        "enabled": true,
-        "notes": "Confirmed live via recipes 101-103 and craftWeapon flow."
-      },
-      {
-        "id": 5,
-        "key": "materia-item",
-        "name": "Materia Item",
-        "enabled": false,
-        "notes": "Reserved for future recipe outputs."
-      }
-    ]
-  }
+  "version": 1,
+  "kind": "recipeOutputKinds",
+  "description": "Recipe output kind ids used by the live CityCrafting contract. These values must match CityCrafting.sol exactly.",
+  "values": [
+    { "id": 0, "key": "none", "name": "None", "enabled": true },
+    { "id": 1, "key": "resource", "name": "Resource", "enabled": false, "notes": "Enum exists onchain but not yet used in current live recipes." },
+    { "id": 2, "key": "component", "name": "Component", "enabled": true, "notes": "Confirmed live via recipes 1-9." },
+    { "id": 3, "key": "blueprint", "name": "Blueprint", "enabled": false, "notes": "Enum exists onchain, blueprint output path prepared." },
+    { "id": 4, "key": "weapon-prototype", "name": "Weapon Prototype", "enabled": true, "notes": "Confirmed live via recipes 101-103 and craftWeapon flow." },
+    { "id": 5, "key": "enchantment", "name": "Enchantment", "enabled": false, "notes": "Enum exists onchain but not yet used in current live recipes." }
+  ]
+}

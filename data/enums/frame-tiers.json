@@ -1,49 +1,14 @@
 {
-    "version": 1,
-    "kind": "frameTiers",
-    "description": "Frame tier ids used for visual presentation of crafted weapons and related metadata.",
-    "values": [
-      {
-        "id": 0,
-        "key": "none",
-        "name": "None",
-        "enabled": true,
-        "notes": "Used where a recipe or base entry carries no frame tier."
-      },
-      {
-        "id": 1,
-        "key": "basic",
-        "name": "Basic",
-        "enabled": true,
-        "notes": "Confirmed live via Iron Sword recipe and weapon instance."
-      },
-      {
-        "id": 2,
-        "key": "refined",
-        "name": "Refined",
-        "enabled": true,
-        "notes": "Confirmed live via Crystal Bow recipe."
-      },
-      {
-        "id": 3,
-        "key": "advanced",
-        "name": "Advanced",
-        "enabled": true,
-        "notes": "Confirmed live via Plasma Rifle recipe."
-      },
-      {
-        "id": 4,
-        "key": "elite",
-        "name": "Elite",
-        "enabled": false,
-        "notes": "Reserved for future content."
-      },
-      {
-        "id": 5,
-        "key": "mythic",
-        "name": "Mythic",
-        "enabled": false,
-        "notes": "Reserved for future content."
-      }
-    ]
-  }
+  "version": 1,
+  "kind": "frameTiers",
+  "description": "Offchain display mapping for frame tier integers currently used in live Inpinity City content.",
+  "values": [
+    { "id": 0, "key": "none", "name": "None", "enabled": true },
+    { "id": 1, "key": "basic", "name": "Basic", "enabled": true, "notes": "Confirmed live via Iron Sword recipe and token #1." },
+    { "id": 2, "key": "refined", "name": "Refined", "enabled": true, "notes": "Confirmed live via Crystal Bow recipe." },
+    { "id": 3, "key": "advanced", "name": "Advanced", "enabled": true, "notes": "Confirmed live via Plasma Rifle recipe." },
+    { "id": 4, "key": "elite", "name": "Elite", "enabled": false },
+    { "id": 5, "key": "mythic", "name": "Mythic", "enabled": false }
+  ],
+  "notes": "These are offchain labels for integer values currently used onchain."
+}

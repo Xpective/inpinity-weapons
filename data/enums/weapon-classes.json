@@ -1,77 +1,22 @@
 {
-    "version": 1,
-    "kind": "weaponClasses",
-    "description": "Weapon class ids used by the live Inpinity City weapon system.",
-    "values": [
-      {
-        "id": 1,
-        "key": "sword",
-        "name": "Sword",
-        "enabled": true,
-        "notes": "Confirmed live via Iron Sword definition."
-      },
-      {
-        "id": 2,
-        "key": "axe",
-        "name": "Axe",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 3,
-        "key": "spear",
-        "name": "Spear",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 4,
-        "key": "bow",
-        "name": "Bow",
-        "enabled": true,
-        "notes": "Confirmed live via Crystal Bow definition."
-      },
-      {
-        "id": 5,
-        "key": "dagger",
-        "name": "Dagger",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 6,
-        "key": "staff",
-        "name": "Staff",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 7,
-        "key": "hammer",
-        "name": "Hammer",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 8,
-        "key": "shield",
-        "name": "Shield",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 9,
-        "key": "relic",
-        "name": "Relic",
-        "enabled": false,
-        "notes": "Reserved for future expansion."
-      },
-      {
-        "id": 10,
-        "key": "plasma-rifle",
-        "name": "Plasma Rifle",
-        "enabled": true,
-        "notes": "Confirmed live via Plasma Rifle definition."
-      }
-    ]
-  }
+  "version": 1,
+  "kind": "weaponClasses",
+  "description": "Weapon class ids used by the live Inpinity City weapon system. These values must match CityWeapons.sol exactly.",
+  "values": [
+    { "id": 0, "key": "none", "name": "None", "enabled": true },
+    { "id": 1, "key": "sword", "name": "Sword", "enabled": true, "notes": "Confirmed live via Iron Sword definition." },
+    { "id": 2, "key": "axe", "name": "Axe", "enabled": false },
+    { "id": 3, "key": "spear", "name": "Spear", "enabled": false },
+    { "id": 4, "key": "bow", "name": "Bow", "enabled": false, "notes": "Base enum exists, but current live Crystal Bow uses CrystalBow enum id 13." },
+    { "id": 5, "key": "pistol", "name": "Pistol", "enabled": false },
+    { "id": 6, "key": "rifle", "name": "Rifle", "enabled": false },
+    { "id": 7, "key": "laser-pistol", "name": "Laser Pistol", "enabled": false },
+    { "id": 8, "key": "laser-rifle", "name": "Laser Rifle", "enabled": false },
+    { "id": 9, "key": "plasma-rifle", "name": "Plasma Rifle", "enabled": true, "notes": "Confirmed live via Plasma Rifle definition." },
+    { "id": 10, "key": "laser-blade", "name": "Laser Blade", "enabled": false },
+    { "id": 11, "key": "railgun", "name": "Railgun", "enabled": false },
+    { "id": 12, "key": "energy-staff", "name": "Energy Staff", "enabled": false },
+    { "id": 13, "key": "crystal-bow", "name": "Crystal Bow", "enabled": true, "notes": "Confirmed live via Crystal Bow definition." },
+    { "id": 14, "key": "relic", "name": "Relic", "enabled": false }
+  ]
+}
