@@ -1,0 +1,22 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "blueprintDefinition",
+    "blueprintDefinitionId": 1,
+    "name": "Iron Sword Blueprint",
+    "slug": "iron-sword-blueprint",
+    "description": "Starter blueprint for crafting the Iron Sword path in the live Inpinity City system.",
+    "rarityTier": 1,
+    "techTier": 1,
+    "factionLock": 0,
+    "districtLock": 0,
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityBlueprints blueprintDefinitionOf(1).",
+    "display": {
+      "rarityLabel": "Common",
+      "techTierLabel": "Primitive",
+      "factionLockLabel": "None",
+      "districtLockLabel": "None"
+    }
+  }
