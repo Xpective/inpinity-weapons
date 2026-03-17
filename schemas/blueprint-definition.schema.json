@@ -1,0 +1,110 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://assets.inpinity.online/city/schemas/blueprint-definition.schema.json",
+    "title": "Blueprint Definition Schema",
+    "description": "Schema for offchain blueprint definition files aligned to live CityBlueprints definitions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schemaVersion",
+      "kind",
+      "blueprintDefinitionId",
+      "name",
+      "rarityTier",
+      "techTier",
+      "factionLock",
+      "districtLock",
+      "metadataRevision",
+      "enabled"
+    ],
+    "properties": {
+      "schemaVersion": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "const": "blueprintDefinition"
+      },
+      "blueprintDefinitionId": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 999
+      },
+      "name": {
+        "$ref": "common.schema.json#/$defs/nameString"
+      },
+      "slug": {
+        "$ref": "common.schema.json#/$defs/slugString"
+      },
+      "description": {
+        "$ref": "common.schema.json#/$defs/longString"
+      },
+      "rarityTier": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5
+      },
+      "techTier": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      },
+      "factionLock": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "districtLock": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "metadataRevision": {
+        "$ref": "common.schema.json#/$defs/metadataRevision"
+      },
+      "enabled": {
+        "$ref": "common.schema.json#/$defs/booleanFlag"
+      },
+      "verificationStatus": {
+        "$ref": "common.schema.json#/$defs/verificationStatus"
+      },
+      "notes": {
+        "type": "string",
+        "maxLength": 2000
+      },
+      "image": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "external_url": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "media": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/mediaObject"
+        }
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/attributeObject"
+        }
+      },
+      "display": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rarityLabel": {
+            "type": "string"
+          },
+          "techTierLabel": {
+            "type": "string"
+          },
+          "factionLockLabel": {
+            "type": "string"
+          },
+          "districtLockLabel": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
