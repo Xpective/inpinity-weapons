@@ -1,0 +1,25 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "componentMetadata",
+    "tokenStandard": "ERC1155",
+    "network": "base",
+    "chainId": 8453,
+    "contractAddress": "0xae6fd8664Ba6E147bfb7bb1Ed4354F60Fc86854e",
+    "componentDefinitionId": 9,
+    "name": "Resonance Grip",
+    "description": "Advanced grip component designed for resonance-sensitive weapon handling in the live Inpinity City system.",
+    "image": "https://assets.inpinity.online/city/assets/components/9.png",
+    "external_url": "https://assets.inpinity.online/city/metadata/components/9.json",
+    "attributes": [
+      { "trait_type": "Component Definition ID", "value": 9, "display_type": "number" },
+      { "trait_type": "Category", "value": 8, "display_type": "number" },
+      { "trait_type": "Category Label", "value": "Grip" },
+      { "trait_type": "Rarity Tier", "value": 2, "display_type": "number" },
+      { "trait_type": "Rarity", "value": "Rare" },
+      { "trait_type": "Tech Tier", "value": 3, "display_type": "number" },
+      { "trait_type": "Tech Tier Label", "value": "Advanced" },
+      { "trait_type": "Enabled", "value": "Yes" }
+    ],
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityComponents componentDefinitionOf(9) and component base URI."
+  }
