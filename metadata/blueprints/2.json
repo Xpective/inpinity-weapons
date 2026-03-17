@@ -1,0 +1,27 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "blueprintMetadata",
+    "tokenStandard": "ERC1155",
+    "network": "base",
+    "chainId": 8453,
+    "contractAddress": "0x9F6453783A8935f57D9E15560012C1e9cb3Ae684",
+    "blueprintDefinitionId": 2,
+    "name": "Crystal Bow Blueprint",
+    "description": "Refined blueprint for crafting the Crystal Bow path in the live Inpinity City system.",
+    "image": "https://assets.inpinity.online/city/assets/blueprints/2.png",
+    "external_url": "https://assets.inpinity.online/city/metadata/blueprints/2.json",
+    "attributes": [
+      { "trait_type": "Blueprint Definition ID", "value": 2, "display_type": "number" },
+      { "trait_type": "Rarity Tier", "value": 2, "display_type": "number" },
+      { "trait_type": "Rarity", "value": "Rare" },
+      { "trait_type": "Tech Tier", "value": 2, "display_type": "number" },
+      { "trait_type": "Tech Tier Label", "value": "Refined" },
+      { "trait_type": "Faction Lock", "value": 0, "display_type": "number" },
+      { "trait_type": "Faction Lock Label", "value": "None" },
+      { "trait_type": "District Lock", "value": 0, "display_type": "number" },
+      { "trait_type": "District Lock Label", "value": "None" },
+      { "trait_type": "Enabled", "value": "Yes" }
+    ],
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityBlueprints blueprintDefinitionOf(2) and blueprint base URI."
+  }
