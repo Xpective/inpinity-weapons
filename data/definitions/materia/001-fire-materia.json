@@ -1,0 +1,47 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "materiaDefinition",
+    "materiaDefinitionId": 1,
+    "name": "Fire Materia",
+    "slug": "fire-materia",
+    "description": "Offensive fire-aligned materia that increases weapon damage while adding heat generation in the live Inpinity City system.",
+    "category": 1,
+    "element": 1,
+    "rarityTier": 2,
+    "maxLevel": 3,
+    "bonuses": [
+      {
+        "level": 1,
+        "values": {
+          "minDamageBonus": 1,
+          "maxDamageBonus": 3,
+          "heatGenerationBonus": 1
+        }
+      },
+      {
+        "level": 2,
+        "values": {
+          "minDamageBonus": 3,
+          "maxDamageBonus": 5,
+          "heatGenerationBonus": 2
+        }
+      },
+      {
+        "level": 3,
+        "values": {
+          "minDamageBonus": 5,
+          "maxDamageBonus": 8,
+          "heatGenerationBonus": 3
+        }
+      }
+    ],
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityMateria materiaDefinitionOf(1) and materiaBonusesOf(1, level). Category 1 = Offensive. Element 1 = Fire.",
+    "display": {
+      "categoryLabel": "Offensive",
+      "elementLabel": "Fire",
+      "rarityLabel": "Rare"
+    }
+  }
