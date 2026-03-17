@@ -1,0 +1,42 @@
+{
+    "version": 1,
+    "kind": "recipeOutputKinds",
+    "description": "Recipe output kinds used by the live CityCrafting contract and reserved future extensions.",
+    "values": [
+      {
+        "id": 1,
+        "key": "blueprint",
+        "name": "Blueprint",
+        "enabled": false,
+        "notes": "Reserved for blueprint-oriented recipe outputs."
+      },
+      {
+        "id": 2,
+        "key": "component",
+        "name": "Component",
+        "enabled": true,
+        "notes": "Confirmed live via recipes 1-9."
+      },
+      {
+        "id": 3,
+        "key": "enchantment-item",
+        "name": "Enchantment Item",
+        "enabled": false,
+        "notes": "Reserved for future recipe outputs."
+      },
+      {
+        "id": 4,
+        "key": "weapon-prototype",
+        "name": "Weapon Prototype",
+        "enabled": true,
+        "notes": "Confirmed live via recipes 101-103 and craftWeapon flow."
+      },
+      {
+        "id": 5,
+        "key": "materia-item",
+        "name": "Materia Item",
+        "enabled": false,
+        "notes": "Reserved for future recipe outputs."
+      }
+    ]
+  }

@@ -1,0 +1,42 @@
+{
+    "version": 1,
+    "kind": "resonanceTypes",
+    "description": "Resonance type ids used by weapon instances. Only confirmed live values should be treated as canonical until verified onchain.",
+    "values": [
+      {
+        "id": 0,
+        "key": "none",
+        "name": "None",
+        "enabled": true,
+        "notes": "Fallback / no resonance."
+      },
+      {
+        "id": 1,
+        "key": "resonant",
+        "name": "Resonant",
+        "enabled": true,
+        "notes": "Confirmed live on weapon token #1."
+      },
+      {
+        "id": 2,
+        "key": "harmonic",
+        "name": "Harmonic",
+        "enabled": false,
+        "notes": "Reserved until verified onchain."
+      },
+      {
+        "id": 3,
+        "key": "unstable",
+        "name": "Unstable",
+        "enabled": false,
+        "notes": "Reserved until verified onchain."
+      },
+      {
+        "id": 4,
+        "key": "borderline",
+        "name": "Borderline",
+        "enabled": false,
+        "notes": "Reserved until verified onchain."
+      }
+    ]
+  }

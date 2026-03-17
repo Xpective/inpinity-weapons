@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "kind": "weaponClasses",
+    "description": "Weapon class ids used by the live Inpinity City weapon system.",
+    "values": [
+      {
+        "id": 1,
+        "key": "sword",
+        "name": "Sword",
+        "enabled": true,
+        "notes": "Confirmed live via Iron Sword definition."
+      },
+      {
+        "id": 2,
+        "key": "axe",
+        "name": "Axe",
+        "enabled": false,
+        "notes": "Reserved for future expansion."
+      },
+      {
+        "id": 3,
+        "key": "spear",
+        "name": "Spear",
+        "enabled": false,
+        "notes": "Reserved for future expansion."
+      },
+      {
+        "id": 4,
+        "key": "bow",
+        "name": "Bow",
+        "enabled": true,
+        "notes": "Confirmed live via Crystal Bow definition."
+      },
+      {
+        "id": 5,
+        "key": "dagger",
+        "name": "Dagger",
+        "enabled": false,
+        "notes": "Reserved for future expansion."
+      },
+      {
+        "id": 6,
+        "key": "staff",
+        "name": "Staff",
+        "enabled": false,
+        "notes": "Reserved for future expansion."
+      },
+      {
+        "id": 7,
+        "key": "hammer",
+        "name": "Hammer",
+        "enabled": false,
+        "notes": "Reserved for future expansion."
+      },
+      {
+        "id": 8,
+        "key": "shield",
+        "name": "Shield",
+        "enabled": false,
+        "notes": "Reserved for future expansion."
+      },
+      {
+        "id": 9,
+        "key": "relic",
+        "name": "Relic",
+        "enabled": false,
+        "notes": "Reserved for future expansion."
+      },
+      {
+        "id": 10,
+        "key": "plasma-rifle",
+        "name": "Plasma Rifle",
+        "enabled": true,
+        "notes": "Confirmed live via Plasma Rifle definition."
+      }
+    ]
+  }

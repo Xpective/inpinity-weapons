@@ -1,0 +1,84 @@
+{
+    "version": 1,
+    "kind": "damageTypes",
+    "description": "Damage type ids used by the live Inpinity City weapon system.",
+    "values": [
+      {
+        "id": 1,
+        "key": "physical",
+        "name": "Physical",
+        "enabled": true,
+        "notes": "Confirmed live via Iron Sword definition."
+      },
+      {
+        "id": 2,
+        "key": "fire",
+        "name": "Fire",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 3,
+        "key": "water",
+        "name": "Water",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 4,
+        "key": "earth",
+        "name": "Earth",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 5,
+        "key": "air",
+        "name": "Air",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 6,
+        "key": "lightning",
+        "name": "Lightning",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 7,
+        "key": "crystal",
+        "name": "Crystal",
+        "enabled": true,
+        "notes": "Confirmed live via Crystal Bow definition."
+      },
+      {
+        "id": 8,
+        "key": "void",
+        "name": "Void",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 9,
+        "key": "aether",
+        "name": "Aether",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 10,
+        "key": "energy",
+        "name": "Energy",
+        "enabled": false,
+        "notes": "Reserved for future content."
+      },
+      {
+        "id": 11,
+        "key": "plasma",
+        "name": "Plasma",
+        "enabled": true,
+        "notes": "Confirmed live via Plasma Rifle definition."
+      }
+    ]
+  }
