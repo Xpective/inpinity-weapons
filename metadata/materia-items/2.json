@@ -1,0 +1,25 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "materiaItemMetadata",
+    "tokenStandard": "ERC1155",
+    "network": "base",
+    "chainId": 8453,
+    "contractAddress": "0xd3258b6b0bAED28f7D90A808d3Cb39d8fF9eD080",
+    "materiaItemDefinitionId": 2,
+    "materiaDefinitionId": 2,
+    "name": "Resonance Materia Item",
+    "description": "Consumable materia item that applies Resonance Materia level 1 in the live Inpinity City system.",
+    "image": "https://assets.inpinity.online/city/assets/materia-items/2.png",
+    "external_url": "https://assets.inpinity.online/city/metadata/materia-items/2.json",
+    "attributes": [
+      { "trait_type": "Materia Item Definition ID", "value": 2, "display_type": "number" },
+      { "trait_type": "Materia Definition ID", "value": 2, "display_type": "number" },
+      { "trait_type": "Level", "value": 1, "display_type": "number" },
+      { "trait_type": "Rarity Tier", "value": 3, "display_type": "number" },
+      { "trait_type": "Rarity", "value": "Epic" },
+      { "trait_type": "Burn On Use", "value": "Yes" },
+      { "trait_type": "Enabled", "value": "Yes" }
+    ],
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityMateriaItems materiaItemDefinitionOf(2) and item base URI. The linked materia definition element must still follow the verified onchain materia definition."
+  }
