@@ -1,0 +1,19 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "materiaItemDefinition",
+    "materiaItemDefinitionId": 3,
+    "name": "Stability Materia Item",
+    "slug": "stability-materia-item",
+    "description": "Consumable materia item that applies Stability Materia level 1 in the live Inpinity City system.",
+    "materiaDefinitionId": 3,
+    "level": 1,
+    "rarityTier": 2,
+    "burnOnUse": true,
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityMateriaItems materiaItemDefinitionOf(3). Linked to materiaDefinitionId 3 = Stability Materia.",
+    "display": {
+      "rarityLabel": "Rare"
+    }
+  }
