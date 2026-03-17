@@ -1,0 +1,20 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "componentDefinition",
+    "componentDefinitionId": 7,
+    "name": "Energy Coil",
+    "slug": "energy-coil",
+    "description": "High-tech conductive coil component used for advanced energy weapon construction in the live Inpinity City system.",
+    "category": 6,
+    "rarityTier": 3,
+    "techTier": 4,
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityComponents componentDefinitionOf(7).",
+    "display": {
+      "categoryLabel": "Coil",
+      "rarityLabel": "Epic",
+      "techTierLabel": "High-Tech"
+    }
+  }

@@ -1,0 +1,20 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "componentDefinition",
+    "componentDefinitionId": 5,
+    "name": "Bow String",
+    "slug": "bow-string",
+    "description": "Tension string component used for bow assembly in the live Inpinity City system.",
+    "category": 4,
+    "rarityTier": 1,
+    "techTier": 1,
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityComponents componentDefinitionOf(5).",
+    "display": {
+      "categoryLabel": "Bow Part",
+      "rarityLabel": "Common",
+      "techTierLabel": "Primitive"
+    }
+  }

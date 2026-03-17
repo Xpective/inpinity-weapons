@@ -1,0 +1,20 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "componentDefinition",
+    "componentDefinitionId": 6,
+    "name": "Plasma Chamber",
+    "slug": "plasma-chamber",
+    "description": "High-tech plasma containment component used for advanced weapon crafting in the live Inpinity City system.",
+    "category": 5,
+    "rarityTier": 3,
+    "techTier": 4,
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityComponents componentDefinitionOf(6).",
+    "display": {
+      "categoryLabel": "Chamber",
+      "rarityLabel": "Epic",
+      "techTierLabel": "High-Tech"
+    }
+  }
