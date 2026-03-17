@@ -1,0 +1,36 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "recipeDefinition",
+    "recipeId": 6,
+    "name": "Plasma Chamber Recipe",
+    "slug": "plasma-chamber-recipe",
+    "description": "Component crafting recipe for Plasma Chamber in the live Inpinity City system.",
+    "outputKind": 2,
+    "outputId": 6,
+    "outputAmount": 1,
+    "requiredFaction": 0,
+    "requiredDistrictKind": 0,
+    "requiredBuildingId": 0,
+    "requiredTechTier": 4,
+    "rarityTier": 0,
+    "frameTier": 0,
+    "requiresDiscovery": false,
+    "costs": [
+      { "resourceId": 0, "amount": 60 },
+      { "resourceId": 2, "amount": 50 },
+      { "resourceId": 6, "amount": 15 }
+    ],
+    "resourceCostsRaw": [60, 0, 50, 0, 0, 0, 15, 0, 0, 0],
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityCrafting recipeOf(6) and getRecipeCosts(6).",
+    "display": {
+      "outputKindLabel": "Component",
+      "requiredFactionLabel": "None",
+      "requiredDistrictKindLabel": "None",
+      "requiredTechTierLabel": "High-Tech",
+      "rarityLabel": "None",
+      "frameTierLabel": "None"
+    }
+  }

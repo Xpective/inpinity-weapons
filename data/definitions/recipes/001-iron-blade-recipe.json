@@ -1,0 +1,35 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "recipeDefinition",
+    "recipeId": 1,
+    "name": "Iron Blade Recipe",
+    "slug": "iron-blade-recipe",
+    "description": "Component crafting recipe for Iron Blade in the live Inpinity City system.",
+    "outputKind": 2,
+    "outputId": 1,
+    "outputAmount": 1,
+    "requiredFaction": 0,
+    "requiredDistrictKind": 0,
+    "requiredBuildingId": 0,
+    "requiredTechTier": 1,
+    "rarityTier": 0,
+    "frameTier": 0,
+    "requiresDiscovery": false,
+    "costs": [
+      { "resourceId": 0, "amount": 50 },
+      { "resourceId": 2, "amount": 40 }
+    ],
+    "resourceCostsRaw": [50, 0, 40, 0, 0, 0, 0, 0, 0, 0],
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityCrafting recipeOf(1) and getRecipeCosts(1). OutputKind 2 = Component.",
+    "display": {
+      "outputKindLabel": "Component",
+      "requiredFactionLabel": "None",
+      "requiredDistrictKindLabel": "None",
+      "requiredTechTierLabel": "Primitive",
+      "rarityLabel": "None",
+      "frameTierLabel": "None"
+    }
+  }

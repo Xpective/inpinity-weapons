@@ -1,0 +1,35 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "recipeDefinition",
+    "recipeId": 5,
+    "name": "Bow String Recipe",
+    "slug": "bow-string-recipe",
+    "description": "Component crafting recipe for Bow String in the live Inpinity City system.",
+    "outputKind": 2,
+    "outputId": 5,
+    "outputAmount": 1,
+    "requiredFaction": 0,
+    "requiredDistrictKind": 0,
+    "requiredBuildingId": 0,
+    "requiredTechTier": 1,
+    "rarityTier": 0,
+    "frameTier": 0,
+    "requiresDiscovery": false,
+    "costs": [
+      { "resourceId": 1, "amount": 20 },
+      { "resourceId": 2, "amount": 5 }
+    ],
+    "resourceCostsRaw": [0, 20, 5, 0, 0, 0, 0, 0, 0, 0],
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityCrafting recipeOf(5) and getRecipeCosts(5).",
+    "display": {
+      "outputKindLabel": "Component",
+      "requiredFactionLabel": "None",
+      "requiredDistrictKindLabel": "None",
+      "requiredTechTierLabel": "Primitive",
+      "rarityLabel": "None",
+      "frameTierLabel": "None"
+    }
+  }
