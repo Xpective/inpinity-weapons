@@ -1,0 +1,19 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "enchantmentItemDefinition",
+    "enchantmentItemDefinitionId": 3,
+    "name": "Durability Seal Item",
+    "slug": "durability-seal-item",
+    "description": "Consumable enchantment item that applies Durability Seal level 1 in the live Inpinity City system.",
+    "enchantmentDefinitionId": 3,
+    "level": 1,
+    "rarityTier": 1,
+    "burnOnUse": true,
+    "metadataRevision": 1,
+    "enabled": true,
+    "verificationStatus": "confirmed",
+    "notes": "Confirmed from live CityEnchantmentItems enchantmentItemDefinitionOf(3). Linked to enchantmentDefinitionId 3 = Durability Seal.",
+    "display": {
+      "rarityLabel": "Common"
+    }
+  }
