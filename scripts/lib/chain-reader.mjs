@@ -4,14 +4,10 @@ import { RPC_CONFIG } from "../config/rpc.mjs";
 const clients = new Map();
 
 function getClient(network = "base") {
-  if (clients.has(network)) {
-    return clients.get(network);
-  }
+  if (clients.has(network)) return clients.get(network);
 
   const config = RPC_CONFIG[network];
-  if (!config) {
-    throw new Error(`Unknown network: ${network}`);
-  }
+  if (!config) throw new Error(`Unknown network: ${network}`);
 
   const client = createPublicClient({
     transport: http(config.rpcUrl)
@@ -65,6 +61,23 @@ const cityEnchantmentItemsAbi = [
     outputs: [
       { name: "itemId", type: "uint256" },
       { name: "enchantmentDefinitionId", type: "uint256" },
+      { name: "level", type: "uint8" },
+      { name: "rarityTier", type: "uint8" },
+      { name: "burnOnUse", type: "bool" },
+      { name: "enabled", type: "bool" }
+    ]
+  }
+];
+
+const cityMateriaItemsAbi = [
+  {
+    type: "function",
+    name: "materiaItemDefinitionOf",
+    stateMutability: "view",
+    inputs: [{ name: "itemId", type: "uint256" }],
+    outputs: [
+      { name: "itemId", type: "uint256" },
+      { name: "materiaDefinitionId", type: "uint256" },
       { name: "level", type: "uint8" },
       { name: "rarityTier", type: "uint8" },
       { name: "burnOnUse", type: "bool" },
@@ -141,6 +154,28 @@ function normalizeEnchantmentItemResult(result) {
   };
 }
 
+function normalizeMateriaItemResult(result) {
+  if (Array.isArray(result)) {
+    return {
+      itemId: Number(result[0]),
+      materiaDefinitionId: Number(result[1]),
+      level: Number(result[2]),
+      rarityTier: Number(result[3]),
+      burnOnUse: Boolean(result[4]),
+      enabled: Boolean(result[5])
+    };
+  }
+
+  return {
+    itemId: Number(result.itemId),
+    materiaDefinitionId: Number(result.materiaDefinitionId),
+    level: Number(result.level),
+    rarityTier: Number(result.rarityTier),
+    burnOnUse: Boolean(result.burnOnUse),
+    enabled: Boolean(result.enabled)
+  };
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -164,10 +199,7 @@ async function readContractWithRetry(client, params, options = {}) {
     try {
       return await client.readContract(params);
     } catch (error) {
-      if (!isRateLimitError(error) || attempt === retries) {
-        throw error;
-      }
-
+      if (!isRateLimitError(error) || attempt === retries) throw error;
       const delay = baseDelayMs * (attempt + 1);
       console.warn(`Rate limit hit. Retry ${attempt + 1}/${retries} after ${delay}ms...`);
       await sleep(delay);
@@ -177,11 +209,7 @@ async function readContractWithRetry(client, params, options = {}) {
   throw new Error("Unreachable retry state.");
 }
 
-export async function readComponentDefinition({
-  network = "base",
-  contractAddress,
-  id
-}) {
+export async function readComponentDefinition({ network = "base", contractAddress, id }) {
   const client = getClient(network);
   await sleep(250);
 
@@ -193,20 +221,13 @@ export async function readComponentDefinition({
       functionName: "componentDefinitionOf",
       args: [BigInt(id)]
     },
-    {
-      retries: 5,
-      baseDelayMs: 1500
-    }
+    { retries: 5, baseDelayMs: 1500 }
   );
 
   return normalizeComponentResult(result);
 }
 
-export async function readBlueprintDefinition({
-  network = "base",
-  contractAddress,
-  id
-}) {
+export async function readBlueprintDefinition({ network = "base", contractAddress, id }) {
   const client = getClient(network);
   await sleep(250);
 
@@ -218,20 +239,13 @@ export async function readBlueprintDefinition({
       functionName: "blueprintDefinitionOf",
       args: [BigInt(id)]
     },
-    {
-      retries: 5,
-      baseDelayMs: 1500
-    }
+    { retries: 5, baseDelayMs: 1500 }
   );
 
   return normalizeBlueprintResult(result);
 }
 
-export async function readEnchantmentItemDefinition({
-  network = "base",
-  contractAddress,
-  itemId
-}) {
+export async function readEnchantmentItemDefinition({ network = "base", contractAddress, itemId }) {
   const client = getClient(network);
   await sleep(250);
 
@@ -243,11 +257,26 @@ export async function readEnchantmentItemDefinition({
       functionName: "enchantmentItemDefinitionOf",
       args: [BigInt(itemId)]
     },
-    {
-      retries: 5,
-      baseDelayMs: 1500
-    }
+    { retries: 5, baseDelayMs: 1500 }
   );
 
   return normalizeEnchantmentItemResult(result);
+}
+
+export async function readMateriaItemDefinition({ network = "base", contractAddress, itemId }) {
+  const client = getClient(network);
+  await sleep(250);
+
+  const result = await readContractWithRetry(
+    client,
+    {
+      address: contractAddress,
+      abi: cityMateriaItemsAbi,
+      functionName: "materiaItemDefinitionOf",
+      args: [BigInt(itemId)]
+    },
+    { retries: 5, baseDelayMs: 1500 }
+  );
+
+  return normalizeMateriaItemResult(result);
 }
