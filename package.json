@@ -33,7 +33,11 @@
         "generate:components": "node scripts/generators/generate-component-metadata.mjs",
         "generate:blueprints": "node scripts/generators/generate-blueprint-metadata.mjs",
         "generate:enchantment-items": "node scripts/generators/generate-enchantment-item-metadata.mjs",
-        "generate:materia-items": "node scripts/generators/generate-materia-item-metadata.mjs"
+        "generate:materia-items": "node scripts/generators/generate-materia-item-metadata.mjs",
+        "previews:compose": "node scripts/previews/compose-all-previews.mjs --type=all",
+        "previews:update-image-links": "node scripts/previews/update-metadata-image-links.mjs",
+        "publish:prepare": "npm run previews:compose && npm run previews:update-image-links && npm run validate"
+        
     },
     "keywords": [
         "inpinity",
