@@ -48,6 +48,10 @@
       "value": "Yes"
     }
   ],
+  "generatedAt": "2026-03-18T01:03:36.670Z",
+  "sourceContract": "0xae6fd8664Ba6E147bfb7bb1Ed4354F60Fc86854e",
+  "sourceReadMethod": "componentDefinitionOf",
+  "sourceMode": "chain",
   "verificationStatus": "confirmed",
   "notes": "Generated from live CityComponents componentDefinitionOf(3) on base."
 }

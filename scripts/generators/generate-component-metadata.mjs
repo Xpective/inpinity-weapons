@@ -1,8 +1,9 @@
 import path from "node:path";
 import { CONTRACTS } from "../config/contracts.mjs";
 import { GENERATOR_DEFAULTS } from "../config/generator-defaults.mjs";
-import { readJsonFile } from "../lib/fs-utils.mjs";
 import { readComponentDefinition } from "../lib/chain-reader.mjs";
+import { readComponentDefinitionFromFile } from "../lib/definition-reader.mjs";
+import { resolveWithSource } from "../lib/source-resolver.mjs";
 import { resolveComponentAsset } from "../lib/asset-resolver.mjs";
 import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
@@ -14,13 +15,18 @@ const network = getArgValue("--network", GENERATOR_DEFAULTS.network);
 const dryRun = hasFlag("--dry-run");
 const fromId = Number(getArgValue("--from", "1"));
 const toId = Number(getArgValue("--to", "9"));
+const sourceMode = getArgValue("--source", "auto");
 
 const report = {
   generatedAt: new Date().toISOString(),
   network,
   chainId: CONTRACTS[network].chainId,
+  generator: "generate-component-metadata",
+  sourceModeRequested: sourceMode,
   summary: {
-    componentsGenerated: 0
+    componentsGenerated: 0,
+    generatedFromChain: 0,
+    generatedFromDefinitions: 0
   },
   warnings: []
 };
@@ -41,11 +47,19 @@ function getDefaultCategoryLabel(category) {
 }
 
 for (let id = fromId; id <= toId; id += 1) {
-  const definition = await readComponentDefinition({
-    network,
-    contractAddress: CONTRACTS[network].cityComponents,
-    id
+  const resolved = await resolveWithSource({
+    sourceMode,
+    readFromChain: async () =>
+      readComponentDefinition({
+        network,
+        contractAddress: CONTRACTS[network].cityComponents,
+        id
+      }),
+    readFromDefinitions: async () => readComponentDefinitionFromFile(id),
+    onWarning: (msg) => report.warnings.push(`Component ${id}: ${msg}`)
   });
+
+  const definition = resolved.data;
 
   if (!definition.id || !definition.name) {
     report.warnings.push(`Component ${id} returned empty definition.`);
@@ -111,9 +125,24 @@ for (let id = fromId; id <= toId; id += 1) {
         value: definition.enabled ? "Yes" : "No"
       }
     ],
-    verificationStatus: "confirmed",
-    notes: `Generated from live CityComponents componentDefinitionOf(${definition.id}) on ${network}.`
+    generatedAt: new Date().toISOString(),
+    sourceContract:
+      resolved.sourceMode === "chain" ? CONTRACTS[network].cityComponents : CONTRACTS[network].cityComponents,
+    sourceReadMethod:
+      resolved.sourceMode === "chain"
+        ? "componentDefinitionOf"
+        : "data/definitions/components/*.json",
+    sourceMode: resolved.sourceMode,
+    verificationStatus: resolved.sourceMode === "chain" ? "confirmed" : "derived",
+    notes:
+      resolved.sourceMode === "chain"
+        ? `Generated from live CityComponents componentDefinitionOf(${definition.id}) on ${network}.`
+        : `Generated from local component definition fallback for id ${definition.id}.`
   };
+
+  if (resolved.fallbackReason) {
+    metadata.sourceFallbackReason = resolved.fallbackReason;
+  }
 
   const merged = mergeObjects(metadata, override);
 
@@ -123,6 +152,11 @@ for (let id = fromId; id <= toId; id += 1) {
   }
 
   report.summary.componentsGenerated += 1;
+  if (resolved.sourceMode === "chain") {
+    report.summary.generatedFromChain += 1;
+  } else {
+    report.summary.generatedFromDefinitions += 1;
+  }
 }
 
 if (GENERATOR_DEFAULTS.writeReport && !dryRun) {
@@ -133,6 +167,10 @@ console.log(
   dryRun
     ? `Dry run complete. Components checked: ${report.summary.componentsGenerated}`
     : `Component metadata generation complete. Written: ${report.summary.componentsGenerated}`
+);
+
+console.log(
+  `Sources used: chain=${report.summary.generatedFromChain}, definitions=${report.summary.generatedFromDefinitions}`
 );
 
 if (report.warnings.length > 0) {
