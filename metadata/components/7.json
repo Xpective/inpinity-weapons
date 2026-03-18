@@ -1,25 +1,53 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "componentMetadata",
-    "tokenStandard": "ERC1155",
-    "network": "base",
-    "chainId": 8453,
-    "contractAddress": "0xae6fd8664Ba6E147bfb7bb1Ed4354F60Fc86854e",
-    "componentDefinitionId": 7,
-    "name": "Energy Coil",
-    "description": "High-tech conductive coil component used for advanced energy weapon construction in the live Inpinity City system.",
-    "image": "https://assets.inpinity.online/city/assets/components/7.png",
-    "external_url": "https://assets.inpinity.online/city/metadata/components/7.json",
-    "attributes": [
-      { "trait_type": "Component Definition ID", "value": 7, "display_type": "number" },
-      { "trait_type": "Category", "value": 6, "display_type": "number" },
-      { "trait_type": "Category Label", "value": "Coil" },
-      { "trait_type": "Rarity Tier", "value": 3, "display_type": "number" },
-      { "trait_type": "Rarity", "value": "Epic" },
-      { "trait_type": "Tech Tier", "value": 4, "display_type": "number" },
-      { "trait_type": "Tech Tier Label", "value": "High-Tech" },
-      { "trait_type": "Enabled", "value": "Yes" }
-    ],
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityComponents componentDefinitionOf(7) and component base URI."
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "componentMetadata",
+  "tokenStandard": "ERC1155",
+  "network": "base",
+  "chainId": 8453,
+  "contractAddress": "0xae6fd8664Ba6E147bfb7bb1Ed4354F60Fc86854e",
+  "componentDefinitionId": 7,
+  "name": "Energy Coil",
+  "description": "Published metadata for Energy Coil in the live Inpinity City system.",
+  "image": "https://assets.inpinity.online/city/assets/components/7.png",
+  "external_url": "https://assets.inpinity.online/city/metadata/components/7.json",
+  "attributes": [
+    {
+      "trait_type": "Component Definition ID",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Category",
+      "value": 6,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Category Label",
+      "value": "Coil"
+    },
+    {
+      "trait_type": "Rarity Tier",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Tech Tier",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Tech Tier Label",
+      "value": "High-Tech"
+    },
+    {
+      "trait_type": "Enabled",
+      "value": "Yes"
+    }
+  ],
+  "verificationStatus": "confirmed",
+  "notes": "Generated from live CityComponents componentDefinitionOf(7) on base."
+}
