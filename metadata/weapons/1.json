@@ -121,7 +121,7 @@
     ],
     "notes": "Offchain descriptive composition. Current V1 onchain crafting remains resource-based."
   },
-  "generatedAt": "2026-03-18T01:18:19.488Z",
+  "generatedAt": "2026-03-18T01:21:42.513Z",
   "sourceContract": "0x6b3cDe1DdACDFB5dC060f10A94Ea52b237E5131F",
   "sourceReadMethod": "weaponInstanceOf + ownerOf + data/definitions/weapons/*.json",
   "sourceMode": "definitions",
