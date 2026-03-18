@@ -1,0 +1,32 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "blueprintAssetsManifest",
+    "baseAssetUrl": "https://assets.inpinity.online/city/assets/blueprints/",
+    "items": [
+      {
+        "blueprintDefinitionId": 1,
+        "name": "Iron Sword Blueprint",
+        "image": "https://assets.inpinity.online/city/assets/blueprints/1.png",
+        "thumbnail": "https://assets.inpinity.online/city/assets/blueprints/1-thumb.png",
+        "sourceHint": "assets/export/blueprints/1.png",
+        "enabled": true
+      },
+      {
+        "blueprintDefinitionId": 2,
+        "name": "Crystal Bow Blueprint",
+        "image": "https://assets.inpinity.online/city/assets/blueprints/2.png",
+        "thumbnail": "https://assets.inpinity.online/city/assets/blueprints/2-thumb.png",
+        "sourceHint": "assets/export/blueprints/2.png",
+        "enabled": true
+      },
+      {
+        "blueprintDefinitionId": 3,
+        "name": "Plasma Rifle Blueprint",
+        "image": "https://assets.inpinity.online/city/assets/blueprints/3.png",
+        "thumbnail": "https://assets.inpinity.online/city/assets/blueprints/3-thumb.png",
+        "sourceHint": "assets/export/blueprints/3.png",
+        "enabled": true
+      }
+    ],
+    "notes": "Blueprint asset manifest for live CityBlueprints content."
+  }
