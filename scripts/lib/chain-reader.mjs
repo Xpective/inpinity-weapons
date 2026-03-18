@@ -56,6 +56,23 @@ const cityBlueprintsAbi = [
   }
 ];
 
+const cityEnchantmentItemsAbi = [
+  {
+    type: "function",
+    name: "enchantmentItemDefinitionOf",
+    stateMutability: "view",
+    inputs: [{ name: "itemId", type: "uint256" }],
+    outputs: [
+      { name: "itemId", type: "uint256" },
+      { name: "enchantmentDefinitionId", type: "uint256" },
+      { name: "level", type: "uint8" },
+      { name: "rarityTier", type: "uint8" },
+      { name: "burnOnUse", type: "bool" },
+      { name: "enabled", type: "bool" }
+    ]
+  }
+];
+
 function normalizeComponentResult(result) {
   if (Array.isArray(result)) {
     return {
@@ -102,6 +119,28 @@ function normalizeBlueprintResult(result) {
   };
 }
 
+function normalizeEnchantmentItemResult(result) {
+  if (Array.isArray(result)) {
+    return {
+      itemId: Number(result[0]),
+      enchantmentDefinitionId: Number(result[1]),
+      level: Number(result[2]),
+      rarityTier: Number(result[3]),
+      burnOnUse: Boolean(result[4]),
+      enabled: Boolean(result[5])
+    };
+  }
+
+  return {
+    itemId: Number(result.itemId),
+    enchantmentDefinitionId: Number(result.enchantmentDefinitionId),
+    level: Number(result.level),
+    rarityTier: Number(result.rarityTier),
+    burnOnUse: Boolean(result.burnOnUse),
+    enabled: Boolean(result.enabled)
+  };
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -144,7 +183,6 @@ export async function readComponentDefinition({
   id
 }) {
   const client = getClient(network);
-
   await sleep(250);
 
   const result = await readContractWithRetry(
@@ -170,7 +208,6 @@ export async function readBlueprintDefinition({
   id
 }) {
   const client = getClient(network);
-
   await sleep(250);
 
   const result = await readContractWithRetry(
@@ -188,4 +225,29 @@ export async function readBlueprintDefinition({
   );
 
   return normalizeBlueprintResult(result);
+}
+
+export async function readEnchantmentItemDefinition({
+  network = "base",
+  contractAddress,
+  itemId
+}) {
+  const client = getClient(network);
+  await sleep(250);
+
+  const result = await readContractWithRetry(
+    client,
+    {
+      address: contractAddress,
+      abi: cityEnchantmentItemsAbi,
+      functionName: "enchantmentItemDefinitionOf",
+      args: [BigInt(itemId)]
+    },
+    {
+      retries: 5,
+      baseDelayMs: 1500
+    }
+  );
+
+  return normalizeEnchantmentItemResult(result);
 }

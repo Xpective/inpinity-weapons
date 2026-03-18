@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-03-18T00:38:40.999Z",
+  "generatedAt": "2026-03-18T00:42:41.820Z",
   "network": "base",
   "chainId": 8453,
   "summary": {
-    "blueprintsGenerated": 3
+    "enchantmentItemsGenerated": 3
   },
   "warnings": []
 }
