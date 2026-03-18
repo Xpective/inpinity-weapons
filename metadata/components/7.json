@@ -48,10 +48,26 @@
       "value": "Yes"
     }
   ],
-  "generatedAt": "2026-03-18T01:21:21.606Z",
+  "generatedAt": "2026-03-18T10:22:10.712Z",
   "sourceContract": "0xae6fd8664Ba6E147bfb7bb1Ed4354F60Fc86854e",
   "sourceReadMethod": "componentDefinitionOf",
   "sourceMode": "chain",
   "verificationStatus": "confirmed",
-  "notes": "Generated from live CityComponents componentDefinitionOf(7) on base."
+  "notes": "Generated from live CityComponents componentDefinitionOf(7) on base.",
+  "rarityPresentation": {
+    "rarityTier": 3,
+    "key": "epic",
+    "name": "Epic",
+    "frame": {
+      "path512": "assets/frames/512/epic.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/epic.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/epic.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/epic.png",
+      "masterSize": 512
+    }
+  }
 }

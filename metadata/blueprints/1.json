@@ -57,10 +57,26 @@
       "value": "Yes"
     }
   ],
-  "generatedAt": "2026-03-18T01:21:23.535Z",
+  "generatedAt": "2026-03-18T10:24:47.025Z",
   "sourceContract": "0x9F6453783A8935f57D9E15560012C1e9cb3Ae684",
   "sourceReadMethod": "blueprintDefinitionOf",
   "sourceMode": "chain",
   "verificationStatus": "confirmed",
-  "notes": "Generated from live CityBlueprints blueprintDefinitionOf(1) on base."
+  "notes": "Generated from live CityBlueprints blueprintDefinitionOf(1) on base.",
+  "rarityPresentation": {
+    "rarityTier": 1,
+    "key": "common",
+    "name": "Common",
+    "frame": {
+      "path512": "assets/frames/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/common.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/common.png",
+      "masterSize": 512
+    }
+  }
 }

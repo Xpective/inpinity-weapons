@@ -9,6 +9,7 @@ import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
 import { writeSyncReport } from "../lib/report-writer.mjs";
 import { hasFlag, getArgValue } from "../lib/cli-utils.mjs";
+import { getRarityAssets } from "../lib/rarity-asset-resolver.mjs";
 import { getRarityLabel, getTechTierLabel } from "../lib/enum-labels.mjs";
 
 const network = getArgValue("--network", GENERATOR_DEFAULTS.network);
@@ -68,6 +69,7 @@ for (let id = fromId; id <= toId; id += 1) {
 
   const asset = await resolveComponentAsset(id);
   const override = await readOptionalOverride("components", id);
+  const rarityAssets = await getRarityAssets(definition.rarityTier);
 
   if (!asset) {
     report.warnings.push(`Missing asset manifest entry for component ${id}.`);
@@ -126,8 +128,7 @@ for (let id = fromId; id <= toId; id += 1) {
       }
     ],
     generatedAt: new Date().toISOString(),
-    sourceContract:
-      resolved.sourceMode === "chain" ? CONTRACTS[network].cityComponents : CONTRACTS[network].cityComponents,
+    sourceContract: CONTRACTS[network].cityComponents,
     sourceReadMethod:
       resolved.sourceMode === "chain"
         ? "componentDefinitionOf"
@@ -137,7 +138,23 @@ for (let id = fromId; id <= toId; id += 1) {
     notes:
       resolved.sourceMode === "chain"
         ? `Generated from live CityComponents componentDefinitionOf(${definition.id}) on ${network}.`
-        : `Generated from local component definition fallback for id ${definition.id}.`
+        : `Generated from local component definition fallback for id ${definition.id}.`,
+    rarityPresentation: {
+      rarityTier: rarityAssets.rarityTier,
+      key: rarityAssets.key,
+      name: rarityAssets.name,
+      frame: {
+        path512: rarityAssets.frame.path512,
+        publicUrl: rarityAssets.frame.publicUrl,
+        transparentCenter: rarityAssets.frame.transparentCenter,
+        masterSize: rarityAssets.frame.masterSize
+      },
+      background: {
+        path512: rarityAssets.background.path512,
+        publicUrl: rarityAssets.background.publicUrl,
+        masterSize: rarityAssets.background.masterSize
+      }
+    }
   };
 
   if (resolved.fallbackReason) {

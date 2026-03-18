@@ -30,7 +30,11 @@
         "sync": "node scripts/sync/sync-from-chain.mjs",
         "test:rarity-assets": "node scripts/lib/test-rarity-asset-resolver.mjs",
 
-        "generate:weapons": "node scripts/generators/generate-weapon-instance-metadata.mjs"
+        "generate:weapons": "node scripts/generators/generate-weapon-instance-metadata.mjs",
+        "generate:components": "node scripts/generators/generate-component-metadata.mjs",
+        "generate:blueprints": "node scripts/generators/generate-blueprint-metadata.mjs",
+        "generate:enchantment-items": "node scripts/generators/generate-enchantment-item-metadata.mjs",
+        "generate:materia-items": "node scripts/generators/generate-materia-item-metadata.mjs"
     },
     "keywords": [
         "inpinity",

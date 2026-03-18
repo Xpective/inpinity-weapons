@@ -9,6 +9,7 @@ import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
 import { writeSyncReport } from "../lib/report-writer.mjs";
 import { hasFlag, getArgValue } from "../lib/cli-utils.mjs";
+import { getRarityAssets } from "../lib/rarity-asset-resolver.mjs";
 import { getRarityLabel } from "../lib/enum-labels.mjs";
 
 const network = getArgValue("--network", GENERATOR_DEFAULTS.network);
@@ -53,6 +54,7 @@ for (let itemId = fromId; itemId <= toId; itemId += 1) {
 
   const asset = await resolveMateriaItemAsset(itemId);
   const override = await readOptionalOverride("materia-items", itemId);
+  const rarityAssets = await getRarityAssets(definition.rarityTier);
 
   if (!asset) {
     report.warnings.push(`Missing asset manifest entry for materia item ${itemId}.`);
@@ -127,7 +129,23 @@ for (let itemId = fromId; itemId <= toId; itemId += 1) {
     notes:
       resolved.sourceMode === "chain"
         ? `Generated from live CityMateriaItems materiaItemDefinitionOf(${definition.itemId}) on ${network}.`
-        : `Generated from local materia item definition fallback for id ${definition.itemId}.`
+        : `Generated from local materia item definition fallback for id ${definition.itemId}.`,
+    rarityPresentation: {
+      rarityTier: rarityAssets.rarityTier,
+      key: rarityAssets.key,
+      name: rarityAssets.name,
+      frame: {
+        path512: rarityAssets.frame.path512,
+        publicUrl: rarityAssets.frame.publicUrl,
+        transparentCenter: rarityAssets.frame.transparentCenter,
+        masterSize: rarityAssets.frame.masterSize
+      },
+      background: {
+        path512: rarityAssets.background.path512,
+        publicUrl: rarityAssets.background.publicUrl,
+        masterSize: rarityAssets.background.masterSize
+      }
+    }
   };
 
   if (resolved.fallbackReason) {

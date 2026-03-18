@@ -45,10 +45,26 @@
       "value": "Yes"
     }
   ],
-  "generatedAt": "2026-03-18T01:21:34.432Z",
+  "generatedAt": "2026-03-18T10:28:46.270Z",
   "sourceContract": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
   "sourceReadMethod": "enchantmentItemDefinitionOf",
   "sourceMode": "chain",
   "verificationStatus": "confirmed",
-  "notes": "Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(2) on base."
+  "notes": "Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(2) on base.",
+  "rarityPresentation": {
+    "rarityTier": 2,
+    "key": "rare",
+    "name": "Rare",
+    "frame": {
+      "path512": "assets/frames/512/rare.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/rare.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/rare.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/rare.png",
+      "masterSize": 512
+    }
+  }
 }
