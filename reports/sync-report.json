@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-18T01:07:05.887Z",
+  "generatedAt": "2026-03-18T01:09:22.762Z",
   "network": "base",
   "chainId": 8453,
-  "generator": "generate-blueprint-metadata",
+  "generator": "generate-enchantment-item-metadata",
   "sourceModeRequested": "auto",
   "summary": {
-    "blueprintsGenerated": 3,
+    "enchantmentItemsGenerated": 3,
     "generatedFromChain": 3,
     "generatedFromDefinitions": 0
   },

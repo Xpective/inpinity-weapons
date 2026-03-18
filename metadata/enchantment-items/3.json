@@ -45,6 +45,10 @@
       "value": "Yes"
     }
   ],
+  "generatedAt": "2026-03-18T01:09:32.483Z",
+  "sourceContract": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
+  "sourceReadMethod": "enchantmentItemDefinitionOf",
+  "sourceMode": "chain",
   "verificationStatus": "confirmed",
   "notes": "Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(3) on base."
 }
