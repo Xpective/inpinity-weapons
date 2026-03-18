@@ -23,7 +23,12 @@ const SCHEMA_ID_MAP = {
   "enchantment-item-definition.schema.json": "https://assets.inpinity.online/city/schemas/enchantment-item-definition.schema.json",
   "materia-definition.schema.json": "https://assets.inpinity.online/city/schemas/materia-definition.schema.json",
   "materia-item-definition.schema.json": "https://assets.inpinity.online/city/schemas/materia-item-definition.schema.json",
-  "recipe.schema.json": "https://assets.inpinity.online/city/schemas/recipe.schema.json"
+  "recipe.schema.json": "https://assets.inpinity.online/city/schemas/recipe.schema.json",
+  "weapon-instance-metadata.schema.json": "https://assets.inpinity.online/city/schemas/weapon-instance-metadata.schema.json",
+  "component-metadata.schema.json": "https://assets.inpinity.online/city/schemas/component-metadata.schema.json",
+  "blueprint-metadata.schema.json": "https://assets.inpinity.online/city/schemas/blueprint-metadata.schema.json",
+  "enchantment-item-metadata.schema.json": "https://assets.inpinity.online/city/schemas/enchantment-item-metadata.schema.json",
+  "materia-item-metadata.schema.json": "https://assets.inpinity.online/city/schemas/materia-item-metadata.schema.json"
 };
 
 async function ensureSchemasLoaded() {
@@ -44,13 +49,17 @@ async function ensureSchemasLoaded() {
       "enchantment-item-definition.schema.json",
       "materia-definition.schema.json",
       "materia-item-definition.schema.json",
-      "recipe.schema.json"
+      "recipe.schema.json",
+      "weapon-instance-metadata.schema.json",
+      "component-metadata.schema.json",
+      "blueprint-metadata.schema.json",
+      "enchantment-item-metadata.schema.json",
+      "materia-item-metadata.schema.json"
     ];
 
     for (const fileName of schemaFiles) {
       const fullPath = path.join(PATHS.schemas, fileName);
       const schema = await readJsonFile(fullPath);
-
       const schemaId = schema.$id || SCHEMA_ID_MAP[fileName] || fileName;
 
       if (!ajv.getSchema(schemaId)) {

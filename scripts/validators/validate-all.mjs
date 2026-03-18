@@ -40,6 +40,31 @@ const checks = [
     label: "Recipes",
     pattern: "data/definitions/recipes/*.json",
     schemaFileName: "recipe.schema.json"
+  },
+  {
+    label: "Metadata Weapons",
+    pattern: "metadata/weapons/*.json",
+    schemaFileName: "weapon-instance-metadata.schema.json"
+  },
+  {
+    label: "Metadata Components",
+    pattern: "metadata/components/*.json",
+    schemaFileName: "component-metadata.schema.json"
+  },
+  {
+    label: "Metadata Blueprints",
+    pattern: "metadata/blueprints/*.json",
+    schemaFileName: "blueprint-metadata.schema.json"
+  },
+  {
+    label: "Metadata Enchantment Items",
+    pattern: "metadata/enchantment-items/*.json",
+    schemaFileName: "enchantment-item-metadata.schema.json"
+  },
+  {
+    label: "Metadata Materia Items",
+    pattern: "metadata/materia-items/*.json",
+    schemaFileName: "materia-item-metadata.schema.json"
   }
 ];
 

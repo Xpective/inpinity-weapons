@@ -13,6 +13,11 @@
       "validate:materia": "node scripts/validators/validate-materia.mjs",
       "validate:materia-items": "node scripts/validators/validate-materia-items.mjs",
       "validate:recipes": "node scripts/validators/validate-recipes.mjs",
+      "validate:metadata:weapons": "node scripts/validators/validate-metadata-weapons.mjs",
+      "validate:metadata:components": "node scripts/validators/validate-metadata-components.mjs",
+      "validate:metadata:blueprints": "node scripts/validators/validate-metadata-blueprints.mjs",
+      "validate:metadata:enchantment-items": "node scripts/validators/validate-metadata-enchantment-items.mjs",
+      "validate:metadata:materia-items": "node scripts/validators/validate-metadata-materia-items.mjs",
       "validate": "node scripts/validators/validate-all.mjs"
     },
     "keywords": [
