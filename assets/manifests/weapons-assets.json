@@ -1,32 +1,33 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "weaponAssetsManifest",
-    "baseAssetUrl": "https://assets.inpinity.online/city/assets/weapons/",
-    "items": [
-      {
-        "weaponDefinitionId": 1,
-        "name": "Iron Sword",
-        "image": "https://assets.inpinity.online/city/assets/weapons/1.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/weapons/1-thumb.png",
-        "sourceHint": "assets/export/weapons/1.png",
-        "enabled": true
-      },
-      {
-        "weaponDefinitionId": 2,
-        "name": "Crystal Bow",
-        "image": "https://assets.inpinity.online/city/assets/weapons/2.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/weapons/2-thumb.png",
-        "sourceHint": "assets/export/weapons/2.png",
-        "enabled": true
-      },
-      {
-        "weaponDefinitionId": 3,
-        "name": "Plasma Rifle",
-        "image": "https://assets.inpinity.online/city/assets/weapons/3.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/weapons/3-thumb.png",
-        "sourceHint": "assets/export/weapons/3.png",
-        "enabled": true
-      }
-    ],
-    "notes": "Weapon asset manifest for live CityWeapons content. Token instance metadata may reuse definition-level art until instance-specific renders exist."
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "weaponAssetsManifest",
+  "baseAssetUrl": "https://assets.inpinity.online/city/assets/weapons/512/",
+  "masterSize": 512,
+  "items": [
+    {
+      "weaponDefinitionId": 1,
+      "name": "Iron Sword",
+      "image": "https://assets.inpinity.online/city/assets/weapons/512/1.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/weapons/512/1-thumb.png",
+      "sourceHint": "assets/weapons/512/1.png",
+      "enabled": true
+    },
+    {
+      "weaponDefinitionId": 2,
+      "name": "Crystal Bow",
+      "image": "https://assets.inpinity.online/city/assets/weapons/512/2.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/weapons/512/2-thumb.png",
+      "sourceHint": "assets/weapons/512/2.png",
+      "enabled": true
+    },
+    {
+      "weaponDefinitionId": 3,
+      "name": "Plasma Rifle",
+      "image": "https://assets.inpinity.online/city/assets/weapons/512/3.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/weapons/512/3-thumb.png",
+      "sourceHint": "assets/weapons/512/3.png",
+      "enabled": true
+    }
+  ],
+  "notes": "Weapon asset manifest for live CityWeapons content. Master PNG assets are stored in assets/weapons/512/. Token instance metadata may reuse definition-level art until instance-specific renders exist."
+}

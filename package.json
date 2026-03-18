@@ -29,7 +29,6 @@
         "scaffold": "node scripts/scaffold/scaffold.mjs",
         "sync": "node scripts/sync/sync-from-chain.mjs",
         "test:rarity-assets": "node scripts/lib/test-rarity-asset-resolver.mjs",
-
         "generate:weapons": "node scripts/generators/generate-weapon-instance-metadata.mjs",
         "generate:components": "node scripts/generators/generate-component-metadata.mjs",
         "generate:blueprints": "node scripts/generators/generate-blueprint-metadata.mjs",
@@ -53,6 +52,7 @@
         "ajv": "^8.17.1",
         "ajv-formats": "^3.0.1",
         "fast-glob": "^3.3.3",
+        "sharp": "^0.34.5",
         "viem": "^2.47.4"
     }
 }
