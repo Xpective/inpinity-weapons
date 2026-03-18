@@ -2,6 +2,8 @@ import path from "node:path";
 import { CONTRACTS } from "../config/contracts.mjs";
 import { GENERATOR_DEFAULTS } from "../config/generator-defaults.mjs";
 import { readEnchantmentItemDefinition } from "../lib/chain-reader.mjs";
+import { readEnchantmentItemDefinitionFromFile } from "../lib/definition-reader.mjs";
+import { resolveWithSource } from "../lib/source-resolver.mjs";
 import { resolveEnchantmentItemAsset } from "../lib/asset-resolver.mjs";
 import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
@@ -13,23 +15,36 @@ const network = getArgValue("--network", GENERATOR_DEFAULTS.network);
 const dryRun = hasFlag("--dry-run");
 const fromId = Number(getArgValue("--from", "1"));
 const toId = Number(getArgValue("--to", "3"));
+const sourceMode = getArgValue("--source", "auto");
 
 const report = {
   generatedAt: new Date().toISOString(),
   network,
   chainId: CONTRACTS[network].chainId,
+  generator: "generate-enchantment-item-metadata",
+  sourceModeRequested: sourceMode,
   summary: {
-    enchantmentItemsGenerated: 0
+    enchantmentItemsGenerated: 0,
+    generatedFromChain: 0,
+    generatedFromDefinitions: 0
   },
   warnings: []
 };
 
 for (let itemId = fromId; itemId <= toId; itemId += 1) {
-  const definition = await readEnchantmentItemDefinition({
-    network,
-    contractAddress: CONTRACTS[network].cityEnchantmentItems,
-    itemId
+  const resolved = await resolveWithSource({
+    sourceMode,
+    readFromChain: async () =>
+      readEnchantmentItemDefinition({
+        network,
+        contractAddress: CONTRACTS[network].cityEnchantmentItems,
+        itemId
+      }),
+    readFromDefinitions: async () => readEnchantmentItemDefinitionFromFile(itemId),
+    onWarning: (msg) => report.warnings.push(`Enchantment item ${itemId}: ${msg}`)
   });
+
+  const definition = resolved.data;
 
   if (!definition.itemId) {
     report.warnings.push(`Enchantment item ${itemId} returned empty definition.`);
@@ -101,9 +116,23 @@ for (let itemId = fromId; itemId <= toId; itemId += 1) {
         value: definition.enabled ? "Yes" : "No"
       }
     ],
-    verificationStatus: "confirmed",
-    notes: `Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(${definition.itemId}) on ${network}.`
+    generatedAt: new Date().toISOString(),
+    sourceContract: CONTRACTS[network].cityEnchantmentItems,
+    sourceReadMethod:
+      resolved.sourceMode === "chain"
+        ? "enchantmentItemDefinitionOf"
+        : "data/definitions/enchantment-items/*.json",
+    sourceMode: resolved.sourceMode,
+    verificationStatus: resolved.sourceMode === "chain" ? "confirmed" : "derived",
+    notes:
+      resolved.sourceMode === "chain"
+        ? `Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(${definition.itemId}) on ${network}.`
+        : `Generated from local enchantment item definition fallback for id ${definition.itemId}.`
   };
+
+  if (resolved.fallbackReason) {
+    metadata.sourceFallbackReason = resolved.fallbackReason;
+  }
 
   const merged = mergeObjects(metadata, override);
 
@@ -113,6 +142,11 @@ for (let itemId = fromId; itemId <= toId; itemId += 1) {
   }
 
   report.summary.enchantmentItemsGenerated += 1;
+  if (resolved.sourceMode === "chain") {
+    report.summary.generatedFromChain += 1;
+  } else {
+    report.summary.generatedFromDefinitions += 1;
+  }
 }
 
 if (GENERATOR_DEFAULTS.writeReport && !dryRun) {
@@ -123,6 +157,10 @@ console.log(
   dryRun
     ? `Dry run complete. Enchantment items checked: ${report.summary.enchantmentItemsGenerated}`
     : `Enchantment item metadata generation complete. Written: ${report.summary.enchantmentItemsGenerated}`
+);
+
+console.log(
+  `Sources used: chain=${report.summary.generatedFromChain}, definitions=${report.summary.generatedFromDefinitions}`
 );
 
 if (report.warnings.length > 0) {

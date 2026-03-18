@@ -44,6 +44,27 @@ export async function readBlueprintDefinitionFromFile(id) {
   };
 }
 
+export async function readEnchantmentItemDefinitionFromFile(itemId) {
+  const filePath = path.join(
+    "data",
+    "definitions",
+    "enchantment-items",
+    `${String(itemId).padStart(3, "0")}-${getEnchantmentItemSlug(itemId)}.json`
+  );
+
+  const json = await readJsonFile(filePath);
+
+  return {
+    itemId: Number(json.enchantmentItemDefinitionId),
+    enchantmentDefinitionId: Number(json.enchantmentDefinitionId),
+    level: Number(json.level),
+    rarityTier: Number(json.rarityTier),
+    burnOnUse: Boolean(json.burnOnUse),
+    enabled: Boolean(json.enabled),
+    _sourceFile: filePath
+  };
+}
+
 function getComponentSlug(id) {
   const map = {
     1: "iron-blade",
@@ -58,9 +79,7 @@ function getComponentSlug(id) {
   };
 
   const slug = map[Number(id)];
-  if (!slug) {
-    throw new Error(`No component slug mapping found for id ${id}`);
-  }
+  if (!slug) throw new Error(`No component slug mapping found for id ${id}`);
   return slug;
 }
 
@@ -72,8 +91,18 @@ function getBlueprintSlug(id) {
   };
 
   const slug = map[Number(id)];
-  if (!slug) {
-    throw new Error(`No blueprint slug mapping found for id ${id}`);
-  }
+  if (!slug) throw new Error(`No blueprint slug mapping found for id ${id}`);
+  return slug;
+}
+
+function getEnchantmentItemSlug(itemId) {
+  const map = {
+    1: "fire-edge-item",
+    2: "precision-sight-item",
+    3: "durability-seal-item"
+  };
+
+  const slug = map[Number(itemId)];
+  if (!slug) throw new Error(`No enchantment item slug mapping found for id ${itemId}`);
   return slug;
 }
