@@ -1,44 +1,37 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "materiaDefinition",
-    "materiaDefinitionId": 2,
-    "name": "Resonance Materia",
-    "slug": "resonance-materia",
-    "description": "Resonance-focused materia that increases critical multiplier and stability in the live Inpinity City system.",
-    "category": 6,
-    "element": 10,
-    "rarityTier": 3,
-    "maxLevel": 3,
-    "bonuses": [
-      {
-        "level": 1,
-        "values": {
-          "critMultiplierBpsBonus": 300,
-          "stabilityBonus": 2
-        }
-      },
-      {
-        "level": 2,
-        "values": {
-          "critMultiplierBpsBonus": 600,
-          "stabilityBonus": 4
-        }
-      },
-      {
-        "level": 3,
-        "values": {
-          "critMultiplierBpsBonus": 900,
-          "stabilityBonus": 7
-        }
+  "schemaVersion": "1.0.0",
+  "kind": "materiaDefinition",
+  "materiaDefinitionId": 2,
+  "name": "Resonance Materia",
+  "category": 6,
+  "element": 10,
+  "rarityTier": 3,
+  "maxLevel": 3,
+  "enabled": true,
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityMateria.",
+  "bonuses": [
+    {
+      "level": 1,
+      "values": {
+        "critMultiplierBpsBonus": 300,
+        "stabilityBonus": 2
       }
-    ],
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "unverified",
-    "notes": "Category 6 = Resonance is expected. Element must match live CityMateria exactly. Current value is set to 10 only if confirmed by getMateriaMeta(2) or materiaDefinitionOf(2). If live read differs, update this file immediately. Do not guess between Aether, Plasma and Energy mappings.",
-    "display": {
-      "categoryLabel": "Resonance",
-      "elementLabel": "Verify Onchain",
-      "rarityLabel": "Epic"
+    },
+    {
+      "level": 2,
+      "values": {
+        "critMultiplierBpsBonus": 600,
+        "stabilityBonus": 4
+      }
+    },
+    {
+      "level": 3,
+      "values": {
+        "critMultiplierBpsBonus": 900,
+        "stabilityBonus": 7
+      }
     }
-  }
+  ]
+}

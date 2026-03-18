@@ -1,36 +1,46 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "recipeDefinition",
-    "recipeId": 8,
-    "name": "Stabilizer Recipe",
-    "slug": "stabilizer-recipe",
-    "description": "Component crafting recipe for Stabilizer in the live Inpinity City system.",
-    "outputKind": 2,
-    "outputId": 8,
-    "outputAmount": 1,
-    "requiredFaction": 0,
-    "requiredDistrictKind": 0,
-    "requiredBuildingId": 0,
-    "requiredTechTier": 3,
-    "rarityTier": 0,
-    "frameTier": 0,
-    "requiresDiscovery": false,
-    "costs": [
-      { "resourceId": 0, "amount": 40 },
-      { "resourceId": 2, "amount": 30 },
-      { "resourceId": 3, "amount": 5 }
-    ],
-    "resourceCostsRaw": [40, 0, 30, 5, 0, 0, 0, 0, 0, 0],
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityCrafting recipeOf(8) and getRecipeCosts(8).",
-    "display": {
-      "outputKindLabel": "Component",
-      "requiredFactionLabel": "None",
-      "requiredDistrictKindLabel": "None",
-      "requiredTechTierLabel": "Advanced",
-      "rarityLabel": "None",
-      "frameTierLabel": "None"
+  "schemaVersion": "1.0.0",
+  "kind": "recipeDefinition",
+  "recipeId": 8,
+  "name": "Stabilizer Recipe",
+  "outputKind": 2,
+  "outputId": 8,
+  "outputAmount": 1,
+  "requiredFaction": 0,
+  "requiredDistrictKind": 0,
+  "requiredBuildingId": 0,
+  "requiredTechTier": 3,
+  "rarityTier": 0,
+  "frameTier": 0,
+  "requiresDiscovery": false,
+  "enabled": true,
+  "costs": [
+    {
+      "resourceId": 0,
+      "amount": 40
+    },
+    {
+      "resourceId": 2,
+      "amount": 30
+    },
+    {
+      "resourceId": 3,
+      "amount": 5
     }
-  }
+  ],
+  "resourceCostsRaw": [
+    40,
+    0,
+    30,
+    5,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityCrafting."
+}

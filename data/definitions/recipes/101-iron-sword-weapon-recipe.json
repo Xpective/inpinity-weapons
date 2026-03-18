@@ -1,36 +1,46 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "recipeDefinition",
-    "recipeId": 101,
-    "name": "Iron Sword Weapon Recipe",
-    "slug": "iron-sword-weapon-recipe",
-    "description": "Weapon crafting recipe for the Iron Sword in the live Inpinity City system.",
-    "outputKind": 4,
-    "outputId": 1,
-    "outputAmount": 1,
-    "requiredFaction": 0,
-    "requiredDistrictKind": 0,
-    "requiredBuildingId": 0,
-    "requiredTechTier": 1,
-    "rarityTier": 1,
-    "frameTier": 1,
-    "requiresDiscovery": false,
-    "costs": [
-      { "resourceId": 0, "amount": 100 },
-      { "resourceId": 2, "amount": 75 },
-      { "resourceId": 3, "amount": 10 }
-    ],
-    "resourceCostsRaw": [100, 0, 75, 10, 0, 0, 0, 0, 0, 0],
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityCrafting recipeOf(101) and getRecipeCosts(101). OutputKind 4 = WeaponPrototype. OutputId 1 = Iron Sword.",
-    "display": {
-      "outputKindLabel": "Weapon Prototype",
-      "requiredFactionLabel": "None",
-      "requiredDistrictKindLabel": "None",
-      "requiredTechTierLabel": "Primitive",
-      "rarityLabel": "Common",
-      "frameTierLabel": "Basic"
+  "schemaVersion": "1.0.0",
+  "kind": "recipeDefinition",
+  "recipeId": 101,
+  "name": "Iron Sword Weapon Recipe",
+  "outputKind": 4,
+  "outputId": 1,
+  "outputAmount": 1,
+  "requiredFaction": 0,
+  "requiredDistrictKind": 0,
+  "requiredBuildingId": 0,
+  "requiredTechTier": 1,
+  "rarityTier": 1,
+  "frameTier": 1,
+  "requiresDiscovery": false,
+  "enabled": true,
+  "costs": [
+    {
+      "resourceId": 0,
+      "amount": 100
+    },
+    {
+      "resourceId": 2,
+      "amount": 75
+    },
+    {
+      "resourceId": 3,
+      "amount": 10
     }
-  }
+  ],
+  "resourceCostsRaw": [
+    100,
+    0,
+    75,
+    10,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityCrafting."
+}

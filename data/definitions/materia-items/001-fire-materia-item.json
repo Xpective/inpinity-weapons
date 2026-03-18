@@ -1,19 +1,14 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "materiaItemDefinition",
-    "materiaItemDefinitionId": 1,
-    "name": "Fire Materia Item",
-    "slug": "fire-materia-item",
-    "description": "Consumable materia item that applies Fire Materia level 1 in the live Inpinity City system.",
-    "materiaDefinitionId": 1,
-    "level": 1,
-    "rarityTier": 2,
-    "burnOnUse": true,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityMateriaItems materiaItemDefinitionOf(1). Linked to materiaDefinitionId 1 = Fire Materia.",
-    "display": {
-      "rarityLabel": "Rare"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "materiaItemDefinition",
+  "materiaItemDefinitionId": 1,
+  "materiaDefinitionId": 1,
+  "level": 1,
+  "rarityTier": 2,
+  "burnOnUse": true,
+  "enabled": true,
+  "name": "Fire Materia Item",
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityMateriaItems."
+}

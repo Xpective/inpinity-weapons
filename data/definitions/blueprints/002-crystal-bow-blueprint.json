@@ -1,22 +1,14 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "blueprintDefinition",
-    "blueprintDefinitionId": 2,
-    "name": "Crystal Bow Blueprint",
-    "slug": "crystal-bow-blueprint",
-    "description": "Refined blueprint for crafting the Crystal Bow path in the live Inpinity City system.",
-    "rarityTier": 2,
-    "techTier": 2,
-    "factionLock": 0,
-    "districtLock": 0,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityBlueprints blueprintDefinitionOf(2).",
-    "display": {
-      "rarityLabel": "Rare",
-      "techTierLabel": "Refined",
-      "factionLockLabel": "None",
-      "districtLockLabel": "None"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "blueprintDefinition",
+  "blueprintDefinitionId": 2,
+  "name": "Crystal Bow Blueprint",
+  "rarityTier": 2,
+  "techTier": 2,
+  "factionLock": 0,
+  "districtLock": 0,
+  "enabled": true,
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityBlueprints."
+}

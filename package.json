@@ -25,7 +25,9 @@
         "generate:blueprints:auto": "node scripts/generators/generate-blueprint-metadata.mjs --source=auto",
         "generate:enchantment-items:auto": "node scripts/generators/generate-enchantment-item-metadata.mjs --source=auto",
         "generate:materia-items:auto": "node scripts/generators/generate-materia-item-metadata.mjs --source=auto",
-        "generate:weapons:auto": "node scripts/generators/generate-weapon-instance-metadata.mjs --source=auto" 
+        "generate:weapons:auto": "node scripts/generators/generate-weapon-instance-metadata.mjs --source=auto",
+        "scaffold": "node scripts/scaffold/scaffold.mjs",
+        "sync": "node scripts/sync/sync-from-chain.mjs" 
     },
     "keywords": [
         "inpinity",

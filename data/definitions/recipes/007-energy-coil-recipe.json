@@ -1,36 +1,46 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "recipeDefinition",
-    "recipeId": 7,
-    "name": "Energy Coil Recipe",
-    "slug": "energy-coil-recipe",
-    "description": "Component crafting recipe for Energy Coil in the live Inpinity City system.",
-    "outputKind": 2,
-    "outputId": 7,
-    "outputAmount": 1,
-    "requiredFaction": 0,
-    "requiredDistrictKind": 0,
-    "requiredBuildingId": 0,
-    "requiredTechTier": 4,
-    "rarityTier": 0,
-    "frameTier": 0,
-    "requiresDiscovery": false,
-    "costs": [
-      { "resourceId": 0, "amount": 50 },
-      { "resourceId": 5, "amount": 30 },
-      { "resourceId": 6, "amount": 10 }
-    ],
-    "resourceCostsRaw": [50, 0, 0, 0, 0, 30, 10, 0, 0, 0],
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityCrafting recipeOf(7) and getRecipeCosts(7).",
-    "display": {
-      "outputKindLabel": "Component",
-      "requiredFactionLabel": "None",
-      "requiredDistrictKindLabel": "None",
-      "requiredTechTierLabel": "High-Tech",
-      "rarityLabel": "None",
-      "frameTierLabel": "None"
+  "schemaVersion": "1.0.0",
+  "kind": "recipeDefinition",
+  "recipeId": 7,
+  "name": "Energy Coil Recipe",
+  "outputKind": 2,
+  "outputId": 7,
+  "outputAmount": 1,
+  "requiredFaction": 0,
+  "requiredDistrictKind": 0,
+  "requiredBuildingId": 0,
+  "requiredTechTier": 4,
+  "rarityTier": 0,
+  "frameTier": 0,
+  "requiresDiscovery": false,
+  "enabled": true,
+  "costs": [
+    {
+      "resourceId": 0,
+      "amount": 50
+    },
+    {
+      "resourceId": 5,
+      "amount": 30
+    },
+    {
+      "resourceId": 6,
+      "amount": 10
     }
-  }
+  ],
+  "resourceCostsRaw": [
+    50,
+    0,
+    0,
+    0,
+    0,
+    30,
+    10,
+    0,
+    0,
+    0
+  ],
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityCrafting."
+}

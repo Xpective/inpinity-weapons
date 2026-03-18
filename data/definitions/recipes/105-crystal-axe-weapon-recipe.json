@@ -1,37 +1,45 @@
 {
   "schemaVersion": "1.0.0",
   "kind": "recipeDefinition",
-  "recipeId": 5,
-  "name": "Bow String Recipe",
-  "outputKind": 2,
+  "recipeId": 105,
+  "name": "Crystal Axe Weapon Recipe",
+  "outputKind": 4,
   "outputId": 5,
   "outputAmount": 1,
   "requiredFaction": 0,
   "requiredDistrictKind": 0,
   "requiredBuildingId": 0,
-  "requiredTechTier": 1,
-  "rarityTier": 0,
-  "frameTier": 0,
+  "requiredTechTier": 2,
+  "rarityTier": 2,
+  "frameTier": 2,
   "requiresDiscovery": false,
   "enabled": true,
   "costs": [
     {
-      "resourceId": 1,
-      "amount": 20
+      "resourceId": 0,
+      "amount": 140
     },
     {
       "resourceId": 2,
-      "amount": 5
+      "amount": 60
+    },
+    {
+      "resourceId": 3,
+      "amount": 18
+    },
+    {
+      "resourceId": 6,
+      "amount": 40
     }
   ],
   "resourceCostsRaw": [
+    140,
     0,
-    20,
-    5,
+    60,
+    18,
     0,
     0,
-    0,
-    0,
+    40,
     0,
     0,
     0

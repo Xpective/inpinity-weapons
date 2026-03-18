@@ -1,19 +1,14 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "enchantmentItemDefinition",
-    "enchantmentItemDefinitionId": 2,
-    "name": "Precision Sight Item",
-    "slug": "precision-sight-item",
-    "description": "Consumable enchantment item that applies Precision Sight level 1 in the live Inpinity City system.",
-    "enchantmentDefinitionId": 2,
-    "level": 1,
-    "rarityTier": 2,
-    "burnOnUse": true,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityEnchantmentItems enchantmentItemDefinitionOf(2). Linked to enchantmentDefinitionId 2 = Precision Sight.",
-    "display": {
-      "rarityLabel": "Rare"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "enchantmentItemDefinition",
+  "enchantmentItemDefinitionId": 2,
+  "enchantmentDefinitionId": 2,
+  "level": 1,
+  "rarityTier": 2,
+  "burnOnUse": true,
+  "enabled": true,
+  "name": "Precision Sight Item",
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityEnchantmentItems."
+}

@@ -1,19 +1,14 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "materiaItemDefinition",
-    "materiaItemDefinitionId": 2,
-    "name": "Resonance Materia Item",
-    "slug": "resonance-materia-item",
-    "description": "Consumable materia item that applies Resonance Materia level 1 in the live Inpinity City system.",
-    "materiaDefinitionId": 2,
-    "level": 1,
-    "rarityTier": 3,
-    "burnOnUse": true,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityMateriaItems materiaItemDefinitionOf(2). Linked to materiaDefinitionId 2 = Resonance Materia.",
-    "display": {
-      "rarityLabel": "Epic"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "materiaItemDefinition",
+  "materiaItemDefinitionId": 2,
+  "materiaDefinitionId": 2,
+  "level": 1,
+  "rarityTier": 3,
+  "burnOnUse": true,
+  "enabled": true,
+  "name": "Resonance Materia Item",
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityMateriaItems."
+}

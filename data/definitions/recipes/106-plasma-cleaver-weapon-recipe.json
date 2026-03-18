@@ -1,40 +1,52 @@
 {
   "schemaVersion": "1.0.0",
   "kind": "recipeDefinition",
-  "recipeId": 5,
-  "name": "Bow String Recipe",
-  "outputKind": 2,
-  "outputId": 5,
+  "recipeId": 106,
+  "name": "Plasma Cleaver Weapon Recipe",
+  "outputKind": 4,
+  "outputId": 6,
   "outputAmount": 1,
   "requiredFaction": 0,
   "requiredDistrictKind": 0,
   "requiredBuildingId": 0,
-  "requiredTechTier": 1,
-  "rarityTier": 0,
-  "frameTier": 0,
+  "requiredTechTier": 4,
+  "rarityTier": 3,
+  "frameTier": 3,
   "requiresDiscovery": false,
   "enabled": true,
   "costs": [
     {
-      "resourceId": 1,
-      "amount": 20
+      "resourceId": 0,
+      "amount": 220
     },
     {
       "resourceId": 2,
-      "amount": 5
+      "amount": 120
+    },
+    {
+      "resourceId": 5,
+      "amount": 60
+    },
+    {
+      "resourceId": 6,
+      "amount": 30
+    },
+    {
+      "resourceId": 9,
+      "amount": 8
     }
   ],
   "resourceCostsRaw": [
+    220,
     0,
-    20,
-    5,
-    0,
-    0,
+    120,
     0,
     0,
+    60,
+    30,
     0,
     0,
-    0
+    8
   ],
   "metadataRevision": 1,
   "verificationStatus": "confirmed",

@@ -1,34 +1,38 @@
 {
   "schemaVersion": "1.0.0",
   "kind": "recipeDefinition",
-  "recipeId": 5,
-  "name": "Bow String Recipe",
-  "outputKind": 2,
-  "outputId": 5,
+  "recipeId": 104,
+  "name": "Iron Axe Weapon Recipe",
+  "outputKind": 4,
+  "outputId": 4,
   "outputAmount": 1,
   "requiredFaction": 0,
   "requiredDistrictKind": 0,
   "requiredBuildingId": 0,
   "requiredTechTier": 1,
-  "rarityTier": 0,
-  "frameTier": 0,
+  "rarityTier": 1,
+  "frameTier": 1,
   "requiresDiscovery": false,
   "enabled": true,
   "costs": [
     {
-      "resourceId": 1,
-      "amount": 20
+      "resourceId": 0,
+      "amount": 110
     },
     {
       "resourceId": 2,
-      "amount": 5
+      "amount": 90
+    },
+    {
+      "resourceId": 3,
+      "amount": 12
     }
   ],
   "resourceCostsRaw": [
+    110,
     0,
-    20,
-    5,
-    0,
+    90,
+    12,
     0,
     0,
     0,

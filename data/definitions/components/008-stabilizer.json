@@ -1,20 +1,13 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "componentDefinition",
-    "componentDefinitionId": 8,
-    "name": "Stabilizer",
-    "slug": "stabilizer",
-    "description": "Advanced balancing component used to improve weapon handling and stability in the live Inpinity City system.",
-    "category": 7,
-    "rarityTier": 2,
-    "techTier": 3,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityComponents componentDefinitionOf(8).",
-    "display": {
-      "categoryLabel": "Stabilizer",
-      "rarityLabel": "Rare",
-      "techTierLabel": "Advanced"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "componentDefinition",
+  "componentDefinitionId": 8,
+  "name": "Stabilizer",
+  "category": 7,
+  "rarityTier": 2,
+  "techTier": 3,
+  "enabled": true,
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityComponents."
+}

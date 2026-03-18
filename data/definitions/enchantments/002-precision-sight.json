@@ -1,45 +1,39 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "enchantmentDefinition",
-    "enchantmentDefinitionId": 2,
-    "name": "Precision Sight",
-    "slug": "precision-sight",
-    "description": "Accuracy-focused enchantment that improves hit chance, critical chance and range in the live Inpinity City system.",
-    "category": 3,
-    "rarityTier": 2,
-    "maxLevel": 3,
-    "bonuses": [
-      {
-        "level": 1,
-        "values": {
-          "accuracyBpsBonus": 150,
-          "critChanceBpsBonus": 40,
-          "rangeBonus": 1
-        }
-      },
-      {
-        "level": 2,
-        "values": {
-          "accuracyBpsBonus": 300,
-          "critChanceBpsBonus": 80,
-          "rangeBonus": 2
-        }
-      },
-      {
-        "level": 3,
-        "values": {
-          "accuracyBpsBonus": 450,
-          "critChanceBpsBonus": 120,
-          "rangeBonus": 3
-        }
+  "schemaVersion": "1.0.0",
+  "kind": "enchantmentDefinition",
+  "enchantmentDefinitionId": 2,
+  "name": "Precision Sight",
+  "category": 3,
+  "rarityTier": 2,
+  "maxLevel": 3,
+  "enabled": true,
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityEnchantments.",
+  "bonuses": [
+    {
+      "level": 1,
+      "values": {
+        "critChanceBpsBonus": 40,
+        "accuracyBpsBonus": 150,
+        "rangeBonus": 1
       }
-    ],
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityEnchantments enchantmentDefinitionOf(2) and enchantmentBonusesOf(2, level). Category 3 = Accuracy.",
-    "display": {
-      "categoryLabel": "Accuracy",
-      "rarityLabel": "Rare"
+    },
+    {
+      "level": 2,
+      "values": {
+        "critChanceBpsBonus": 80,
+        "accuracyBpsBonus": 300,
+        "rangeBonus": 2
+      }
+    },
+    {
+      "level": 3,
+      "values": {
+        "critChanceBpsBonus": 120,
+        "accuracyBpsBonus": 450,
+        "rangeBonus": 3
+      }
     }
-  }
+  ]
+}

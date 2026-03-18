@@ -1,22 +1,14 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "blueprintDefinition",
-    "blueprintDefinitionId": 3,
-    "name": "Plasma Rifle Blueprint",
-    "slug": "plasma-rifle-blueprint",
-    "description": "High-tech blueprint for crafting the Plasma Rifle path in the live Inpinity City system.",
-    "rarityTier": 3,
-    "techTier": 4,
-    "factionLock": 0,
-    "districtLock": 0,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityBlueprints blueprintDefinitionOf(3).",
-    "display": {
-      "rarityLabel": "Epic",
-      "techTierLabel": "High-Tech",
-      "factionLockLabel": "None",
-      "districtLockLabel": "None"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "blueprintDefinition",
+  "blueprintDefinitionId": 3,
+  "name": "Plasma Rifle Blueprint",
+  "rarityTier": 3,
+  "techTier": 4,
+  "factionLock": 0,
+  "districtLock": 0,
+  "enabled": true,
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityBlueprints."
+}

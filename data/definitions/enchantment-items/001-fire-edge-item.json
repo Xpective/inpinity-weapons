@@ -1,19 +1,14 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "enchantmentItemDefinition",
-    "enchantmentItemDefinitionId": 1,
-    "name": "Fire Edge Item",
-    "slug": "fire-edge-item",
-    "description": "Consumable enchantment item that applies Fire Edge level 1 in the live Inpinity City system.",
-    "enchantmentDefinitionId": 1,
-    "level": 1,
-    "rarityTier": 2,
-    "burnOnUse": true,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityEnchantmentItems enchantmentItemDefinitionOf(1). Linked to enchantmentDefinitionId 1 = Fire Edge.",
-    "display": {
-      "rarityLabel": "Rare"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "enchantmentItemDefinition",
+  "enchantmentItemDefinitionId": 1,
+  "enchantmentDefinitionId": 1,
+  "level": 1,
+  "rarityTier": 2,
+  "burnOnUse": true,
+  "enabled": true,
+  "name": "Fire Edge Item",
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityEnchantmentItems."
+}

@@ -1,20 +1,13 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "componentDefinition",
-    "componentDefinitionId": 4,
-    "name": "Bow Limb",
-    "slug": "bow-limb",
-    "description": "Structural ranged weapon limb component used for bow-class crafting in the live Inpinity City system.",
-    "category": 4,
-    "rarityTier": 1,
-    "techTier": 1,
-    "metadataRevision": 1,
-    "enabled": true,
-    "verificationStatus": "confirmed",
-    "notes": "Confirmed from live CityComponents componentDefinitionOf(4).",
-    "display": {
-      "categoryLabel": "Bow Part",
-      "rarityLabel": "Common",
-      "techTierLabel": "Primitive"
-    }
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "componentDefinition",
+  "componentDefinitionId": 4,
+  "name": "Bow Limb",
+  "category": 4,
+  "rarityTier": 1,
+  "techTier": 1,
+  "enabled": true,
+  "metadataRevision": 1,
+  "verificationStatus": "confirmed",
+  "notes": "Synced from live CityComponents."
+}
