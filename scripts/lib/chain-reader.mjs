@@ -86,6 +86,41 @@ const cityMateriaItemsAbi = [
   }
 ];
 
+const cityWeaponsAbi = [
+  {
+    type: "function",
+    name: "weaponInstanceOf",
+    stateMutability: "view",
+    inputs: [{ name: "tokenId", type: "uint256" }],
+    outputs: [
+      { name: "tokenId", type: "uint256" },
+      { name: "weaponDefinitionId", type: "uint256" },
+      { name: "rarityTier", type: "uint256" },
+      { name: "frameTier", type: "uint256" },
+      { name: "durability", type: "uint256" },
+      { name: "upgradeLevel", type: "uint256" },
+      { name: "metadataRevision", type: "uint256" },
+      { name: "originPlotId", type: "uint256" },
+      { name: "originFaction", type: "uint256" },
+      { name: "originDistrictKind", type: "uint256" },
+      { name: "craftedAt", type: "uint256" },
+      { name: "visualVariant", type: "uint256" },
+      { name: "resonanceType", type: "uint8" },
+      { name: "craftSeed", type: "bytes32" },
+      { name: "provenanceHash", type: "bytes32" },
+      { name: "genesisEra", type: "bool" },
+      { name: "usedAether", type: "bool" }
+    ]
+  },
+  {
+    type: "function",
+    name: "ownerOf",
+    stateMutability: "view",
+    inputs: [{ name: "tokenId", type: "uint256" }],
+    outputs: [{ name: "", type: "address" }]
+  }
+];
+
 function normalizeComponentResult(result) {
   if (Array.isArray(result)) {
     return {
@@ -173,6 +208,50 @@ function normalizeMateriaItemResult(result) {
     rarityTier: Number(result.rarityTier),
     burnOnUse: Boolean(result.burnOnUse),
     enabled: Boolean(result.enabled)
+  };
+}
+
+function normalizeWeaponInstanceResult(result) {
+  if (Array.isArray(result)) {
+    return {
+      tokenId: Number(result[0]),
+      weaponDefinitionId: Number(result[1]),
+      rarityTier: Number(result[2]),
+      frameTier: Number(result[3]),
+      durability: Number(result[4]),
+      upgradeLevel: Number(result[5]),
+      metadataRevision: Number(result[6]),
+      originPlotId: Number(result[7]),
+      originFaction: Number(result[8]),
+      originDistrictKind: Number(result[9]),
+      craftedAt: Number(result[10]),
+      visualVariant: Number(result[11]),
+      resonanceType: Number(result[12]),
+      craftSeed: result[13],
+      provenanceHash: result[14],
+      genesisEra: Boolean(result[15]),
+      usedAether: Boolean(result[16])
+    };
+  }
+
+  return {
+    tokenId: Number(result.tokenId),
+    weaponDefinitionId: Number(result.weaponDefinitionId),
+    rarityTier: Number(result.rarityTier),
+    frameTier: Number(result.frameTier),
+    durability: Number(result.durability),
+    upgradeLevel: Number(result.upgradeLevel),
+    metadataRevision: Number(result.metadataRevision),
+    originPlotId: Number(result.originPlotId),
+    originFaction: Number(result.originFaction),
+    originDistrictKind: Number(result.originDistrictKind),
+    craftedAt: Number(result.craftedAt),
+    visualVariant: Number(result.visualVariant),
+    resonanceType: Number(result.resonanceType),
+    craftSeed: result.craftSeed,
+    provenanceHash: result.provenanceHash,
+    genesisEra: Boolean(result.genesisEra),
+    usedAether: Boolean(result.usedAether)
   };
 }
 
@@ -279,4 +358,36 @@ export async function readMateriaItemDefinition({ network = "base", contractAddr
   );
 
   return normalizeMateriaItemResult(result);
+}
+
+export async function readWeaponInstance({ network = "base", contractAddress, tokenId }) {
+  const client = getClient(network);
+  await sleep(250);
+
+  const instance = await readContractWithRetry(
+    client,
+    {
+      address: contractAddress,
+      abi: cityWeaponsAbi,
+      functionName: "weaponInstanceOf",
+      args: [BigInt(tokenId)]
+    },
+    { retries: 5, baseDelayMs: 1500 }
+  );
+
+  const owner = await readContractWithRetry(
+    client,
+    {
+      address: contractAddress,
+      abi: cityWeaponsAbi,
+      functionName: "ownerOf",
+      args: [BigInt(tokenId)]
+    },
+    { retries: 5, baseDelayMs: 1500 }
+  );
+
+  return {
+    ...normalizeWeaponInstanceResult(instance),
+    owner
+  };
 }

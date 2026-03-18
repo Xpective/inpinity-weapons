@@ -166,6 +166,58 @@
           "$ref": "common.schema.json#/$defs/mediaObject"
         }
       },
+      "composition": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "recipeId", "intendedComponents", "notes"],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "recipeId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "intendedComponents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["componentDefinitionId", "name"],
+              "properties": {
+                "componentDefinitionId": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 999
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        }
+      },
+      "generatedAt": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "sourceContract": {
+        "$ref": "common.schema.json#/$defs/hexAddress"
+      },
+      "sourceReadMethod": {
+        "type": "string",
+        "minLength": 1
+      },
+      "sourceMode": {
+        "type": "string",
+        "enum": ["chain", "definitions", "auto"]
+      },
       "verificationStatus": {
         "$ref": "common.schema.json#/$defs/verificationStatus"
       },
