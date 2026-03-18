@@ -38,6 +38,24 @@ const cityComponentsAbi = [
   }
 ];
 
+const cityBlueprintsAbi = [
+  {
+    type: "function",
+    name: "blueprintDefinitionOf",
+    stateMutability: "view",
+    inputs: [{ name: "id", type: "uint256" }],
+    outputs: [
+      { name: "id", type: "uint256" },
+      { name: "name", type: "string" },
+      { name: "rarityTier", type: "uint8" },
+      { name: "techTier", type: "uint8" },
+      { name: "factionLock", type: "uint8" },
+      { name: "districtLock", type: "uint8" },
+      { name: "enabled", type: "bool" }
+    ]
+  }
+];
+
 function normalizeComponentResult(result) {
   if (Array.isArray(result)) {
     return {
@@ -56,6 +74,30 @@ function normalizeComponentResult(result) {
     category: Number(result.category),
     rarityTier: Number(result.rarityTier),
     techTier: Number(result.techTier),
+    enabled: Boolean(result.enabled)
+  };
+}
+
+function normalizeBlueprintResult(result) {
+  if (Array.isArray(result)) {
+    return {
+      id: Number(result[0]),
+      name: result[1],
+      rarityTier: Number(result[2]),
+      techTier: Number(result[3]),
+      factionLock: Number(result[4]),
+      districtLock: Number(result[5]),
+      enabled: Boolean(result[6])
+    };
+  }
+
+  return {
+    id: Number(result.id),
+    name: result.name,
+    rarityTier: Number(result.rarityTier),
+    techTier: Number(result.techTier),
+    factionLock: Number(result.factionLock),
+    districtLock: Number(result.districtLock),
     enabled: Boolean(result.enabled)
   };
 }
@@ -88,9 +130,7 @@ async function readContractWithRetry(client, params, options = {}) {
       }
 
       const delay = baseDelayMs * (attempt + 1);
-      console.warn(
-        `Rate limit hit. Retry ${attempt + 1}/${retries} after ${delay}ms...`
-      );
+      console.warn(`Rate limit hit. Retry ${attempt + 1}/${retries} after ${delay}ms...`);
       await sleep(delay);
     }
   }
@@ -122,4 +162,30 @@ export async function readComponentDefinition({
   );
 
   return normalizeComponentResult(result);
+}
+
+export async function readBlueprintDefinition({
+  network = "base",
+  contractAddress,
+  id
+}) {
+  const client = getClient(network);
+
+  await sleep(250);
+
+  const result = await readContractWithRetry(
+    client,
+    {
+      address: contractAddress,
+      abi: cityBlueprintsAbi,
+      functionName: "blueprintDefinitionOf",
+      args: [BigInt(id)]
+    },
+    {
+      retries: 5,
+      baseDelayMs: 1500
+    }
+  );
+
+  return normalizeBlueprintResult(result);
 }

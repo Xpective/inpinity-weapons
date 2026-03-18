@@ -25,6 +25,7 @@
         "generate:materia-items": "node scripts/generators/generate-materia-item-metadata.mjs",
         "generate:weapons": "node scripts/generators/generate-weapon-instance-metadata.mjs",
         "generate:all": "node scripts/generators/generate-all-metadata.mjs"
+        
     },
     "keywords": [
         "inpinity",
