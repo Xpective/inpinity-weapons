@@ -57,6 +57,10 @@
       "value": "Yes"
     }
   ],
+  "generatedAt": "2026-03-18T01:07:10.830Z",
+  "sourceContract": "0x9F6453783A8935f57D9E15560012C1e9cb3Ae684",
+  "sourceReadMethod": "blueprintDefinitionOf",
+  "sourceMode": "chain",
   "verificationStatus": "confirmed",
   "notes": "Generated from live CityBlueprints blueprintDefinitionOf(3) on base."
 }

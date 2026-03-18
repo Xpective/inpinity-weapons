@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-18T01:03:35.072Z",
+  "generatedAt": "2026-03-18T01:07:05.887Z",
   "network": "base",
   "chainId": 8453,
-  "generator": "generate-component-metadata",
+  "generator": "generate-blueprint-metadata",
   "sourceModeRequested": "auto",
   "summary": {
-    "componentsGenerated": 9,
-    "generatedFromChain": 9,
+    "blueprintsGenerated": 3,
+    "generatedFromChain": 3,
     "generatedFromDefinitions": 0
   },
   "warnings": []

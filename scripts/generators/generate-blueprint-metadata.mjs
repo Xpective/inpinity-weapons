@@ -2,6 +2,8 @@ import path from "node:path";
 import { CONTRACTS } from "../config/contracts.mjs";
 import { GENERATOR_DEFAULTS } from "../config/generator-defaults.mjs";
 import { readBlueprintDefinition } from "../lib/chain-reader.mjs";
+import { readBlueprintDefinitionFromFile } from "../lib/definition-reader.mjs";
+import { resolveWithSource } from "../lib/source-resolver.mjs";
 import { resolveBlueprintAsset } from "../lib/asset-resolver.mjs";
 import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
@@ -13,13 +15,18 @@ const network = getArgValue("--network", GENERATOR_DEFAULTS.network);
 const dryRun = hasFlag("--dry-run");
 const fromId = Number(getArgValue("--from", "1"));
 const toId = Number(getArgValue("--to", "3"));
+const sourceMode = getArgValue("--source", "auto");
 
 const report = {
   generatedAt: new Date().toISOString(),
   network,
   chainId: CONTRACTS[network].chainId,
+  generator: "generate-blueprint-metadata",
+  sourceModeRequested: sourceMode,
   summary: {
-    blueprintsGenerated: 0
+    blueprintsGenerated: 0,
+    generatedFromChain: 0,
+    generatedFromDefinitions: 0
   },
   warnings: []
 };
@@ -38,11 +45,19 @@ function getDistrictLockLabel(value) {
 }
 
 for (let id = fromId; id <= toId; id += 1) {
-  const definition = await readBlueprintDefinition({
-    network,
-    contractAddress: CONTRACTS[network].cityBlueprints,
-    id
+  const resolved = await resolveWithSource({
+    sourceMode,
+    readFromChain: async () =>
+      readBlueprintDefinition({
+        network,
+        contractAddress: CONTRACTS[network].cityBlueprints,
+        id
+      }),
+    readFromDefinitions: async () => readBlueprintDefinitionFromFile(id),
+    onWarning: (msg) => report.warnings.push(`Blueprint ${id}: ${msg}`)
   });
+
+  const definition = resolved.data;
 
   if (!definition.id || !definition.name) {
     report.warnings.push(`Blueprint ${id} returned empty definition.`);
@@ -121,9 +136,23 @@ for (let id = fromId; id <= toId; id += 1) {
         value: definition.enabled ? "Yes" : "No"
       }
     ],
-    verificationStatus: "confirmed",
-    notes: `Generated from live CityBlueprints blueprintDefinitionOf(${definition.id}) on ${network}.`
+    generatedAt: new Date().toISOString(),
+    sourceContract: CONTRACTS[network].cityBlueprints,
+    sourceReadMethod:
+      resolved.sourceMode === "chain"
+        ? "blueprintDefinitionOf"
+        : "data/definitions/blueprints/*.json",
+    sourceMode: resolved.sourceMode,
+    verificationStatus: resolved.sourceMode === "chain" ? "confirmed" : "derived",
+    notes:
+      resolved.sourceMode === "chain"
+        ? `Generated from live CityBlueprints blueprintDefinitionOf(${definition.id}) on ${network}.`
+        : `Generated from local blueprint definition fallback for id ${definition.id}.`
   };
+
+  if (resolved.fallbackReason) {
+    metadata.sourceFallbackReason = resolved.fallbackReason;
+  }
 
   const merged = mergeObjects(metadata, override);
 
@@ -133,6 +162,11 @@ for (let id = fromId; id <= toId; id += 1) {
   }
 
   report.summary.blueprintsGenerated += 1;
+  if (resolved.sourceMode === "chain") {
+    report.summary.generatedFromChain += 1;
+  } else {
+    report.summary.generatedFromDefinitions += 1;
+  }
 }
 
 if (GENERATOR_DEFAULTS.writeReport && !dryRun) {
@@ -143,6 +177,10 @@ console.log(
   dryRun
     ? `Dry run complete. Blueprints checked: ${report.summary.blueprintsGenerated}`
     : `Blueprint metadata generation complete. Written: ${report.summary.blueprintsGenerated}`
+);
+
+console.log(
+  `Sources used: chain=${report.summary.generatedFromChain}, definitions=${report.summary.generatedFromDefinitions}`
 );
 
 if (report.warnings.length > 0) {
