@@ -86,6 +86,51 @@ export async function readMateriaItemDefinitionFromFile(itemId) {
   };
 }
 
+export async function readWeaponDefinitionFromFile(id) {
+  const filePath = path.join(
+    "data",
+    "definitions",
+    "weapons",
+    `${String(id).padStart(3, "0")}-${getWeaponSlug(id)}.json`
+  );
+
+  const json = await readJsonFile(filePath);
+
+  return {
+    weaponDefinitionId: Number(json.weaponDefinitionId),
+    name: json.name,
+    weaponClass: Number(json.weaponClass),
+    damageType: Number(json.damageType),
+    techTier: Number(json.techTier),
+    requiredLevel: Number(json.requiredLevel),
+    requiredTechTier: Number(json.requiredTechTier),
+    minDamage: Number(json.minDamage),
+    maxDamage: Number(json.maxDamage),
+    attackSpeed: Number(json.attackSpeed),
+    critChanceBps: Number(json.critChanceBps),
+    critMultiplierBps: Number(json.critMultiplierBps),
+    accuracyBps: Number(json.accuracyBps),
+    range: Number(json.range),
+    maxDurability: Number(json.maxDurability),
+    armorPenBps: Number(json.armorPenBps),
+    blockChanceBps: Number(json.blockChanceBps),
+    lifeStealBps: Number(json.lifeStealBps),
+    energyCost: Number(json.energyCost),
+    heatGeneration: Number(json.heatGeneration),
+    stability: Number(json.stability),
+    cooldownMs: Number(json.cooldownMs),
+    projectileSpeed: Number(json.projectileSpeed),
+    aoeRadius: Number(json.aoeRadius),
+    enchantmentSlots: Number(json.enchantmentSlots),
+    materiaSlots: Number(json.materiaSlots),
+    visualVariant: Number(json.visualVariant),
+    maxUpgradeLevel: Number(json.maxUpgradeLevel),
+    familySetId: Number(json.familySetId),
+    enabled: Boolean(json.enabled),
+    _sourceFile: filePath
+  };
+}
+
 function getComponentSlug(id) {
   const map = {
     1: "iron-blade",
@@ -98,7 +143,6 @@ function getComponentSlug(id) {
     8: "stabilizer",
     9: "resonance-grip"
   };
-
   const slug = map[Number(id)];
   if (!slug) throw new Error(`No component slug mapping found for id ${id}`);
   return slug;
@@ -110,7 +154,6 @@ function getBlueprintSlug(id) {
     2: "crystal-bow-blueprint",
     3: "plasma-rifle-blueprint"
   };
-
   const slug = map[Number(id)];
   if (!slug) throw new Error(`No blueprint slug mapping found for id ${id}`);
   return slug;
@@ -122,7 +165,6 @@ function getEnchantmentItemSlug(itemId) {
     2: "precision-sight-item",
     3: "durability-seal-item"
   };
-
   const slug = map[Number(itemId)];
   if (!slug) throw new Error(`No enchantment item slug mapping found for id ${itemId}`);
   return slug;
@@ -134,8 +176,18 @@ function getMateriaItemSlug(itemId) {
     2: "resonance-materia-item",
     3: "stability-materia-item"
   };
-
   const slug = map[Number(itemId)];
   if (!slug) throw new Error(`No materia item slug mapping found for id ${itemId}`);
+  return slug;
+}
+
+function getWeaponSlug(id) {
+  const map = {
+    1: "iron-sword",
+    2: "crystal-bow",
+    3: "plasma-rifle"
+  };
+  const slug = map[Number(id)];
+  if (!slug) throw new Error(`No weapon slug mapping found for id ${id}`);
   return slug;
 }

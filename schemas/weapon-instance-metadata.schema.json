@@ -218,6 +218,9 @@
         "type": "string",
         "enum": ["chain", "definitions", "auto"]
       },
+      "sourceFallbackReason": {
+        "type": "string"
+      },
       "verificationStatus": {
         "$ref": "common.schema.json#/$defs/verificationStatus"
       },

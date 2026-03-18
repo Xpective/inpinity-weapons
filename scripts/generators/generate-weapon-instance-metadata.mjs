@@ -2,6 +2,8 @@ import path from "node:path";
 import { CONTRACTS } from "../config/contracts.mjs";
 import { GENERATOR_DEFAULTS } from "../config/generator-defaults.mjs";
 import { readWeaponInstance } from "../lib/chain-reader.mjs";
+import { readWeaponDefinitionFromFile } from "../lib/definition-reader.mjs";
+import { resolveWithSource } from "../lib/source-resolver.mjs";
 import { resolveWeaponAsset } from "../lib/asset-resolver.mjs";
 import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
@@ -19,55 +21,54 @@ const network = getArgValue("--network", GENERATOR_DEFAULTS.network);
 const dryRun = hasFlag("--dry-run");
 const fromId = Number(getArgValue("--from", "1"));
 const toId = Number(getArgValue("--to", "1"));
+const sourceMode = getArgValue("--source", "auto");
 
 const report = {
   generatedAt: new Date().toISOString(),
   network,
   chainId: CONTRACTS[network].chainId,
+  generator: "generate-weapon-instance-metadata",
+  sourceModeRequested: sourceMode,
   summary: {
-    weaponsGenerated: 0
+    weaponsGenerated: 0,
+    generatedFromChain: 0,
+    generatedFromDefinitions: 0
   },
   warnings: []
 };
 
-function getDefinitionDefaults(weaponDefinitionId) {
-  const map = {
-    1: {
-      name: "Iron Sword",
-      weaponClass: 1,
-      damageType: 1,
-      intendedComponents: [
-        { componentDefinitionId: 1, name: "Iron Blade" },
-        { componentDefinitionId: 2, name: "Reinforced Hilt" }
-      ],
-      recipeId: 101
-    },
-    2: {
-      name: "Crystal Bow",
-      weaponClass: 13,
-      damageType: 7,
-      intendedComponents: [
-        { componentDefinitionId: 3, name: "Crystal Core" },
-        { componentDefinitionId: 4, name: "Bow Limb" },
-        { componentDefinitionId: 5, name: "Bow String" }
-      ],
-      recipeId: 102
-    },
-    3: {
-      name: "Plasma Rifle",
-      weaponClass: 9,
-      damageType: 11,
-      intendedComponents: [
-        { componentDefinitionId: 6, name: "Plasma Chamber" },
-        { componentDefinitionId: 7, name: "Energy Coil" },
-        { componentDefinitionId: 8, name: "Stabilizer" },
-        { componentDefinitionId: 9, name: "Resonance Grip" }
-      ],
-      recipeId: 103
-    }
+function getDefinitionDefaultsFromDefinition(def) {
+  const recipeMap = {
+    1: 101,
+    2: 102,
+    3: 103
   };
 
-  return map[weaponDefinitionId] || null;
+  const intendedComponentsMap = {
+    1: [
+      { componentDefinitionId: 1, name: "Iron Blade" },
+      { componentDefinitionId: 2, name: "Reinforced Hilt" }
+    ],
+    2: [
+      { componentDefinitionId: 3, name: "Crystal Core" },
+      { componentDefinitionId: 4, name: "Bow Limb" },
+      { componentDefinitionId: 5, name: "Bow String" }
+    ],
+    3: [
+      { componentDefinitionId: 6, name: "Plasma Chamber" },
+      { componentDefinitionId: 7, name: "Energy Coil" },
+      { componentDefinitionId: 8, name: "Stabilizer" },
+      { componentDefinitionId: 9, name: "Resonance Grip" }
+    ]
+  };
+
+  return {
+    name: def.name,
+    weaponClass: def.weaponClass,
+    damageType: def.damageType,
+    recipeId: recipeMap[def.weaponDefinitionId] || null,
+    intendedComponents: intendedComponentsMap[def.weaponDefinitionId] || []
+  };
 }
 
 function getOriginFactionLabel(value) {
@@ -90,15 +91,22 @@ for (let tokenId = fromId; tokenId <= toId; tokenId += 1) {
     continue;
   }
 
-  const defaults = getDefinitionDefaults(instance.weaponDefinitionId);
+  const resolvedDefinition = await resolveWithSource({
+    sourceMode,
+    readFromChain: async () => {
+      throw new Error("Weapon definition chain reader not wired yet, using definitions fallback.");
+    },
+    readFromDefinitions: async () => readWeaponDefinitionFromFile(instance.weaponDefinitionId),
+    onWarning: (msg) =>
+      report.warnings.push(
+        `Weapon token ${tokenId}, definition ${instance.weaponDefinitionId}: ${msg}`
+      )
+  });
+
+  const def = resolvedDefinition.data;
+  const defaults = getDefinitionDefaultsFromDefinition(def);
   const asset = await resolveWeaponAsset(instance.weaponDefinitionId);
   const override = await readOptionalOverride("weapons", tokenId);
-
-  if (!defaults) {
-    report.warnings.push(
-      `No local definition defaults found for weaponDefinitionId ${instance.weaponDefinitionId}.`
-    );
-  }
 
   if (!asset) {
     report.warnings.push(
@@ -218,7 +226,7 @@ for (let tokenId = fromId; tokenId <= toId; tokenId += 1) {
         value: instance.provenanceHash
       }
     ],
-    composition: defaults
+    composition: defaults?.recipeId
       ? {
           type: "resourceBasedRecipe",
           recipeId: defaults.recipeId,
@@ -229,10 +237,17 @@ for (let tokenId = fromId; tokenId <= toId; tokenId += 1) {
       : undefined,
     generatedAt: new Date().toISOString(),
     sourceContract: CONTRACTS[network].cityWeapons,
-    sourceReadMethod: "weaponInstanceOf + ownerOf",
-    sourceMode: "chain",
-    verificationStatus: "confirmed",
-    notes: `Generated from live CityWeapons weaponInstanceOf(${tokenId}) and ownerOf(${tokenId}) on ${network}.`,
+    sourceReadMethod: `weaponInstanceOf + ownerOf + ${
+      resolvedDefinition.sourceMode === "chain"
+        ? "weaponDefinitionOf"
+        : "data/definitions/weapons/*.json"
+    }`,
+    sourceMode: resolvedDefinition.sourceMode,
+    verificationStatus: resolvedDefinition.sourceMode === "chain" ? "confirmed" : "derived",
+    notes:
+      resolvedDefinition.sourceMode === "chain"
+        ? `Generated from live CityWeapons reads for token ${tokenId} on ${network}.`
+        : `Generated from live weapon instance reads plus local weapon definition fallback for token ${tokenId}.`,
     display: {
       weaponClassLabel: await getWeaponClassLabel(defaults?.weaponClass ?? 0),
       damageTypeLabel: await getDamageTypeLabel(defaults?.damageType ?? 0),
@@ -243,6 +258,10 @@ for (let tokenId = fromId; tokenId <= toId; tokenId += 1) {
     }
   };
 
+  if (resolvedDefinition.fallbackReason) {
+    metadata.sourceFallbackReason = resolvedDefinition.fallbackReason;
+  }
+
   const merged = mergeObjects(metadata, override);
 
   if (!dryRun) {
@@ -251,6 +270,11 @@ for (let tokenId = fromId; tokenId <= toId; tokenId += 1) {
   }
 
   report.summary.weaponsGenerated += 1;
+  if (resolvedDefinition.sourceMode === "chain") {
+    report.summary.generatedFromChain += 1;
+  } else {
+    report.summary.generatedFromDefinitions += 1;
+  }
 }
 
 if (GENERATOR_DEFAULTS.writeReport && !dryRun) {
@@ -261,6 +285,10 @@ console.log(
   dryRun
     ? `Dry run complete. Weapon instances checked: ${report.summary.weaponsGenerated}`
     : `Weapon instance metadata generation complete. Written: ${report.summary.weaponsGenerated}`
+);
+
+console.log(
+  `Sources used: chain=${report.summary.generatedFromChain}, definitions=${report.summary.generatedFromDefinitions}`
 );
 
 if (report.warnings.length > 0) {

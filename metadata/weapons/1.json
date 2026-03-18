@@ -121,12 +121,12 @@
     ],
     "notes": "Offchain descriptive composition. Current V1 onchain crafting remains resource-based."
   },
-  "generatedAt": "2026-03-18T00:59:22.460Z",
+  "generatedAt": "2026-03-18T01:18:19.488Z",
   "sourceContract": "0x6b3cDe1DdACDFB5dC060f10A94Ea52b237E5131F",
-  "sourceReadMethod": "weaponInstanceOf + ownerOf",
-  "sourceMode": "chain",
-  "verificationStatus": "confirmed",
-  "notes": "Generated from live CityWeapons weaponInstanceOf(1) and ownerOf(1) on base.",
+  "sourceReadMethod": "weaponInstanceOf + ownerOf + data/definitions/weapons/*.json",
+  "sourceMode": "definitions",
+  "verificationStatus": "derived",
+  "notes": "Generated from live weapon instance reads plus local weapon definition fallback for token 1.",
   "display": {
     "weaponClassLabel": "Sword",
     "damageTypeLabel": "Physical",
@@ -134,5 +134,6 @@
     "frameTierLabel": "Basic",
     "originFactionLabel": "Pi",
     "resonanceTypeLabel": "Pi"
-  }
+  },
+  "sourceFallbackReason": "Weapon definition chain reader not wired yet, using definitions fallback."
 }

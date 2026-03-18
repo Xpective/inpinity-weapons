@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-03-18T01:11:29.794Z",
+  "generatedAt": "2026-03-18T01:18:18.700Z",
   "network": "base",
   "chainId": 8453,
-  "generator": "generate-materia-item-metadata",
+  "generator": "generate-weapon-instance-metadata",
   "sourceModeRequested": "auto",
   "summary": {
-    "materiaItemsGenerated": 3,
-    "generatedFromChain": 3,
-    "generatedFromDefinitions": 0
+    "weaponsGenerated": 1,
+    "generatedFromChain": 0,
+    "generatedFromDefinitions": 1
   },
-  "warnings": []
+  "warnings": [
+    "Weapon token 1, definition 1: Chain read failed, falling back to definitions: Weapon definition chain reader not wired yet, using definitions fallback."
+  ]
 }
