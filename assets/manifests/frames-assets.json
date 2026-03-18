@@ -1,0 +1,44 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "frameAssetsManifest",
+    "baseAssetUrl": "https://assets.inpinity.online/city/assets/frames/",
+    "items": [
+      {
+        "frameTier": 0,
+        "name": "None",
+        "image": "https://assets.inpinity.online/city/assets/frames/0.png",
+        "enabled": true
+      },
+      {
+        "frameTier": 1,
+        "name": "Basic",
+        "image": "https://assets.inpinity.online/city/assets/frames/1.png",
+        "enabled": true
+      },
+      {
+        "frameTier": 2,
+        "name": "Refined",
+        "image": "https://assets.inpinity.online/city/assets/frames/2.png",
+        "enabled": true
+      },
+      {
+        "frameTier": 3,
+        "name": "Advanced",
+        "image": "https://assets.inpinity.online/city/assets/frames/3.png",
+        "enabled": true
+      },
+      {
+        "frameTier": 4,
+        "name": "Elite",
+        "image": "https://assets.inpinity.online/city/assets/frames/4.png",
+        "enabled": false
+      },
+      {
+        "frameTier": 5,
+        "name": "Mythic",
+        "image": "https://assets.inpinity.online/city/assets/frames/5.png",
+        "enabled": false
+      }
+    ],
+    "notes": "Offchain display frame mapping for current and future frame tiers."
+  }

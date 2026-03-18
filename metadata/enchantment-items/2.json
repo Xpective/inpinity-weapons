@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "enchantmentItemMetadata",
+  "tokenStandard": "ERC1155",
+  "network": "base",
+  "chainId": 8453,
+  "contractAddress": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
+  "enchantmentItemDefinitionId": 2,
+  "enchantmentDefinitionId": 2,
+  "name": "Precision Sight Item",
+  "description": "Published metadata for Precision Sight Item in the live Inpinity City system.",
+  "image": "https://assets.inpinity.online/city/previews/enchantment-items/2.png",
+  "external_url": "https://assets.inpinity.online/city/metadata/enchantment-items/2.json",
+  "attributes": [
+    {
+      "trait_type": "Enchantment Item Definition ID",
+      "value": 2,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Enchantment Definition ID",
+      "value": 2,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Level",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity Tier",
+      "value": 2,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Burn On Use",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Enabled",
+      "value": "Yes"
+    }
+  ],
+  "generatedAt": "2026-03-18T10:28:46.270Z",
+  "sourceContract": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
+  "sourceReadMethod": "enchantmentItemDefinitionOf",
+  "sourceMode": "chain",
+  "verificationStatus": "confirmed",
+  "notes": "Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(2) on base.",
+  "rarityPresentation": {
+    "rarityTier": 2,
+    "key": "rare",
+    "name": "Rare",
+    "frame": {
+      "path512": "assets/frames/512/rare.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/rare.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/rare.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/rare.png",
+      "masterSize": 512
+    }
+  }
+}

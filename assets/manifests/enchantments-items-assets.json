@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "enchantmentAssetsManifest",
+  "baseAssetUrl": "https://assets.inpinity.online/city/assets/enchantment-items/512/",
+  "masterSize": 512,
+  "items": [
+    {
+      "enchantmentItemDefinitionId": 1,
+      "enchantmentDefinitionId": 1,
+      "name": "Fire Edge Item",
+      "image": "https://assets.inpinity.online/city/assets/enchantment-items/512/1.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/enchantment-items/512/1-thumb.png",
+      "sourceHint": "assets/enchantment-items/512/1.png",
+      "enabled": true
+    },
+    {
+      "enchantmentItemDefinitionId": 2,
+      "enchantmentDefinitionId": 2,
+      "name": "Precision Sight Item",
+      "image": "https://assets.inpinity.online/city/assets/enchantment-items/512/2.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/enchantment-items/512/2-thumb.png",
+      "sourceHint": "assets/enchantment-items/512/2.png",
+      "enabled": true
+    },
+    {
+      "enchantmentItemDefinitionId": 3,
+      "enchantmentDefinitionId": 3,
+      "name": "Durability Seal Item",
+      "image": "https://assets.inpinity.online/city/assets/enchantment-items/512/3.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/enchantment-items/512/3-thumb.png",
+      "sourceHint": "assets/enchantment-items/512/3.png",
+      "enabled": true
+    }
+  ],
+  "notes": "Enchantment item asset manifest for live CityEnchantmentItems content. Master PNG assets are stored in assets/enchantment-items/512/."
+}

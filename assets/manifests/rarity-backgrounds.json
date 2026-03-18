@@ -1,0 +1,52 @@
+{
+    "version": 1,
+    "kind": "rarityBackgrounds",
+    "description": "Rarity backgrounds for Inpinity City item presentation. 512 master resolution backgrounds aligned to rarity tiers.",
+    "values": [
+      {
+        "rarityTier": 1,
+        "key": "common",
+        "name": "Common",
+        "path512": "assets/backgrounds/512/common.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/common.png",
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 2,
+        "key": "rare",
+        "name": "Rare",
+        "path512": "assets/backgrounds/512/rare.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/rare.png",
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 3,
+        "key": "epic",
+        "name": "Epic",
+        "path512": "assets/backgrounds/512/epic.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/epic.png",
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 4,
+        "key": "legendary",
+        "name": "Legendary",
+        "path512": "assets/backgrounds/512/legendary.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/legendary.png",
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 5,
+        "key": "mythic",
+        "name": "Mythic",
+        "path512": "assets/backgrounds/512/mythic.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/mythic.png",
+        "masterSize": 512,
+        "enabled": true
+      }
+    ]
+  }

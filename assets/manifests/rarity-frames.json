@@ -1,0 +1,57 @@
+{
+    "version": 1,
+    "kind": "rarityFrames",
+    "description": "Rarity frame overlays for Inpinity City item presentation. Frames use transparent centers and 512 master resolution.",
+    "values": [
+      {
+        "rarityTier": 1,
+        "key": "common",
+        "name": "Common",
+        "path512": "assets/frames/512/common.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/common.png",
+        "transparentCenter": true,
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 2,
+        "key": "rare",
+        "name": "Rare",
+        "path512": "assets/frames/512/rare.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/rare.png",
+        "transparentCenter": true,
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 3,
+        "key": "epic",
+        "name": "Epic",
+        "path512": "assets/frames/512/epic.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/epic.png",
+        "transparentCenter": true,
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 4,
+        "key": "legendary",
+        "name": "Legendary",
+        "path512": "assets/frames/512/legendary.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/legendary.png",
+        "transparentCenter": true,
+        "masterSize": 512,
+        "enabled": true
+      },
+      {
+        "rarityTier": 5,
+        "key": "mythic",
+        "name": "Mythic",
+        "path512": "assets/frames/512/mythic.png",
+        "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/mythic.png",
+        "transparentCenter": true,
+        "masterSize": 512,
+        "enabled": true
+      }
+    ]
+  }

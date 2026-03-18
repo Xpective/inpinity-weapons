@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "enchantmentItemMetadata",
+  "tokenStandard": "ERC1155",
+  "network": "base",
+  "chainId": 8453,
+  "contractAddress": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
+  "enchantmentItemDefinitionId": 3,
+  "enchantmentDefinitionId": 3,
+  "name": "Durability Seal Item",
+  "description": "Published metadata for Durability Seal Item in the live Inpinity City system.",
+  "image": "https://assets.inpinity.online/city/previews/enchantment-items/3.png",
+  "external_url": "https://assets.inpinity.online/city/metadata/enchantment-items/3.json",
+  "attributes": [
+    {
+      "trait_type": "Enchantment Item Definition ID",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Enchantment Definition ID",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Level",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity Tier",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Burn On Use",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Enabled",
+      "value": "Yes"
+    }
+  ],
+  "generatedAt": "2026-03-18T10:28:46.714Z",
+  "sourceContract": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
+  "sourceReadMethod": "enchantmentItemDefinitionOf",
+  "sourceMode": "chain",
+  "verificationStatus": "confirmed",
+  "notes": "Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(3) on base.",
+  "rarityPresentation": {
+    "rarityTier": 1,
+    "key": "common",
+    "name": "Common",
+    "frame": {
+      "path512": "assets/frames/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/common.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/common.png",
+      "masterSize": 512
+    }
+  }
+}

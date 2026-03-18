@@ -1,0 +1,102 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://assets.inpinity.online/city/schemas/component-definition.schema.json",
+    "title": "Component Definition Schema",
+    "description": "Schema for offchain component definition files aligned to live CityComponents definitions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schemaVersion",
+      "kind",
+      "componentDefinitionId",
+      "name",
+      "category",
+      "rarityTier",
+      "techTier",
+      "metadataRevision",
+      "enabled"
+    ],
+    "properties": {
+      "schemaVersion": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "const": "componentDefinition"
+      },
+      "componentDefinitionId": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 999
+      },
+      "name": {
+        "$ref": "common.schema.json#/$defs/nameString"
+      },
+      "slug": {
+        "$ref": "common.schema.json#/$defs/slugString"
+      },
+      "description": {
+        "$ref": "common.schema.json#/$defs/longString"
+      },
+      "category": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "rarityTier": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5
+      },
+      "techTier": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      },
+      "metadataRevision": {
+        "$ref": "common.schema.json#/$defs/metadataRevision"
+      },
+      "enabled": {
+        "$ref": "common.schema.json#/$defs/booleanFlag"
+      },
+      "verificationStatus": {
+        "$ref": "common.schema.json#/$defs/verificationStatus"
+      },
+      "notes": {
+        "type": "string",
+        "maxLength": 2000
+      },
+      "image": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "external_url": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "media": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/mediaObject"
+        }
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/attributeObject"
+        }
+      },
+      "display": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "categoryLabel": {
+            "type": "string"
+          },
+          "rarityLabel": {
+            "type": "string"
+          },
+          "techTierLabel": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }

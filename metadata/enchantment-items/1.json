@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "enchantmentItemMetadata",
+  "tokenStandard": "ERC1155",
+  "network": "base",
+  "chainId": 8453,
+  "contractAddress": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
+  "enchantmentItemDefinitionId": 1,
+  "enchantmentDefinitionId": 1,
+  "name": "Fire Edge Item",
+  "description": "Published metadata for Fire Edge Item in the live Inpinity City system.",
+  "image": "https://assets.inpinity.online/city/previews/enchantment-items/1.png",
+  "external_url": "https://assets.inpinity.online/city/metadata/enchantment-items/1.json",
+  "attributes": [
+    {
+      "trait_type": "Enchantment Item Definition ID",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Enchantment Definition ID",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Level",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity Tier",
+      "value": 2,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Burn On Use",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Enabled",
+      "value": "Yes"
+    }
+  ],
+  "generatedAt": "2026-03-18T10:28:45.829Z",
+  "sourceContract": "0x23D0A8E95f2cFf7ae59f033d0B46eAa22CE80d56",
+  "sourceReadMethod": "enchantmentItemDefinitionOf",
+  "sourceMode": "chain",
+  "verificationStatus": "confirmed",
+  "notes": "Generated from live CityEnchantmentItems enchantmentItemDefinitionOf(1) on base.",
+  "rarityPresentation": {
+    "rarityTier": 2,
+    "key": "rare",
+    "name": "Rare",
+    "frame": {
+      "path512": "assets/frames/512/rare.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/rare.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/rare.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/rare.png",
+      "masterSize": 512
+    }
+  }
+}

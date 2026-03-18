@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "materiaAssetsManifest",
+  "baseAssetUrl": "https://assets.inpinity.online/city/assets/materia-items/512/",
+  "masterSize": 512,
+  "items": [
+    {
+      "materiaItemDefinitionId": 1,
+      "materiaDefinitionId": 1,
+      "name": "Fire Materia Item",
+      "image": "https://assets.inpinity.online/city/assets/materia-items/512/1.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/materia-items/512/1-thumb.png",
+      "sourceHint": "assets/materia-items/512/1.png",
+      "enabled": true
+    },
+    {
+      "materiaItemDefinitionId": 2,
+      "materiaDefinitionId": 2,
+      "name": "Resonance Materia Item",
+      "image": "https://assets.inpinity.online/city/assets/materia-items/512/2.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/materia-items/512/2-thumb.png",
+      "sourceHint": "assets/materia-items/512/2.png",
+      "enabled": true
+    },
+    {
+      "materiaItemDefinitionId": 3,
+      "materiaDefinitionId": 3,
+      "name": "Stability Materia Item",
+      "image": "https://assets.inpinity.online/city/assets/materia-items/512/3.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/materia-items/512/3-thumb.png",
+      "sourceHint": "assets/materia-items/512/3.png",
+      "enabled": true
+    }
+  ],
+  "notes": "Materia item asset manifest for live CityMateriaItems content. Master PNG assets are stored in assets/materia-items/512/."
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "blueprintMetadata",
+  "tokenStandard": "ERC1155",
+  "network": "base",
+  "chainId": 8453,
+  "contractAddress": "0x9F6453783A8935f57D9E15560012C1e9cb3Ae684",
+  "blueprintDefinitionId": 3,
+  "name": "Plasma Rifle Blueprint",
+  "description": "Published metadata for Plasma Rifle Blueprint in the live Inpinity City system.",
+  "image": "https://assets.inpinity.online/city/previews/blueprints/3.png",
+  "external_url": "https://assets.inpinity.online/city/metadata/blueprints/3.json",
+  "attributes": [
+    {
+      "trait_type": "Blueprint Definition ID",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity Tier",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Tech Tier",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Tech Tier Label",
+      "value": "High-Tech"
+    },
+    {
+      "trait_type": "Faction Lock",
+      "value": 0,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Faction Lock Label",
+      "value": "None"
+    },
+    {
+      "trait_type": "District Lock",
+      "value": 0,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "District Lock Label",
+      "value": "None"
+    },
+    {
+      "trait_type": "Enabled",
+      "value": "Yes"
+    }
+  ],
+  "generatedAt": "2026-03-18T10:24:47.941Z",
+  "sourceContract": "0x9F6453783A8935f57D9E15560012C1e9cb3Ae684",
+  "sourceReadMethod": "blueprintDefinitionOf",
+  "sourceMode": "chain",
+  "verificationStatus": "confirmed",
+  "notes": "Generated from live CityBlueprints blueprintDefinitionOf(3) on base.",
+  "rarityPresentation": {
+    "rarityTier": 3,
+    "key": "epic",
+    "name": "Epic",
+    "frame": {
+      "path512": "assets/frames/512/epic.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/epic.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/epic.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/epic.png",
+      "masterSize": 512
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://assets.inpinity.online/city/schemas/weapon-definition.schema.json",
+    "title": "Weapon Definition Schema",
+    "description": "Schema for offchain weapon definition files aligned to live CityWeapons weapon definitions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schemaVersion",
+      "kind",
+      "weaponDefinitionId",
+      "name",
+      "weaponClass",
+      "damageType",
+      "techTier",
+      "requiredLevel",
+      "requiredTechTier",
+      "minDamage",
+      "maxDamage",
+      "attackSpeed",
+      "critChanceBps",
+      "critMultiplierBps",
+      "accuracyBps",
+      "range",
+      "maxDurability",
+      "armorPenBps",
+      "blockChanceBps",
+      "lifeStealBps",
+      "energyCost",
+      "heatGeneration",
+      "stability",
+      "cooldownMs",
+      "projectileSpeed",
+      "aoeRadius",
+      "enchantmentSlots",
+      "materiaSlots",
+      "visualVariant",
+      "maxUpgradeLevel",
+      "familySetId",
+      "metadataRevision",
+      "enabled"
+    ],
+    "properties": {
+      "schemaVersion": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "const": "weaponDefinition"
+      },
+      "weaponDefinitionId": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 999
+      },
+      "name": {
+        "$ref": "common.schema.json#/$defs/nameString"
+      },
+      "slug": {
+        "$ref": "common.schema.json#/$defs/slugString"
+      },
+      "description": {
+        "$ref": "common.schema.json#/$defs/longString"
+      },
+      "weaponClass": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 14
+      },
+      "damageType": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 12
+      },
+      "techTier": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      },
+      "requiredLevel": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "requiredTechTier": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      },
+      "minDamage": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "maxDamage": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "attackSpeed": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "critChanceBps": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "critMultiplierBps": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "accuracyBps": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "range": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "maxDurability": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "armorPenBps": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "blockChanceBps": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "lifeStealBps": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "energyCost": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "heatGeneration": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "stability": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "cooldownMs": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "projectileSpeed": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "aoeRadius": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "enchantmentSlots": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "materiaSlots": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "visualVariant": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "maxUpgradeLevel": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "familySetId": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "metadataRevision": {
+        "$ref": "common.schema.json#/$defs/metadataRevision"
+      },
+      "enabled": {
+        "$ref": "common.schema.json#/$defs/booleanFlag"
+      },
+      "verificationStatus": {
+        "$ref": "common.schema.json#/$defs/verificationStatus"
+      },
+      "notes": {
+        "type": "string",
+        "maxLength": 2000
+      },
+      "image": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "external_url": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "media": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/mediaObject"
+        }
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/attributeObject"
+        }
+      },
+      "display": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "weaponClassLabel": {
+            "type": "string"
+          },
+          "damageTypeLabel": {
+            "type": "string"
+          },
+          "techTierLabel": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }

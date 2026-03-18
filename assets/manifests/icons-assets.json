@@ -1,0 +1,80 @@
+{
+    "schemaVersion": "1.0.0",
+    "kind": "iconAssetsManifest",
+    "baseAssetUrl": "https://assets.inpinity.online/city/assets/icons/",
+    "items": [
+      {
+        "key": "weapon",
+        "name": "Weapon Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/weapon.png",
+        "enabled": true
+      },
+      {
+        "key": "component",
+        "name": "Component Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/component.png",
+        "enabled": true
+      },
+      {
+        "key": "blueprint",
+        "name": "Blueprint Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/blueprint.png",
+        "enabled": true
+      },
+      {
+        "key": "enchantment",
+        "name": "Enchantment Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/enchantment.png",
+        "enabled": true
+      },
+      {
+        "key": "materia",
+        "name": "Materia Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/materia.png",
+        "enabled": true
+      },
+      {
+        "key": "fire",
+        "name": "Fire Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/fire.png",
+        "enabled": true
+      },
+      {
+        "key": "crystal",
+        "name": "Crystal Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/crystal.png",
+        "enabled": true
+      },
+      {
+        "key": "plasma",
+        "name": "Plasma Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/plasma.png",
+        "enabled": true
+      },
+      {
+        "key": "energy",
+        "name": "Energy Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/energy.png",
+        "enabled": true
+      },
+      {
+        "key": "pi",
+        "name": "Pi Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/pi.png",
+        "enabled": true
+      },
+      {
+        "key": "phi",
+        "name": "Phi Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/phi.png",
+        "enabled": true
+      },
+      {
+        "key": "borderline",
+        "name": "Borderline Icon",
+        "image": "https://assets.inpinity.online/city/assets/icons/borderline.png",
+        "enabled": true
+      }
+    ],
+    "notes": "General icon manifest for UI and later metadata generation helpers."
+  }

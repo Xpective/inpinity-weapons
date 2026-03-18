@@ -1,0 +1,156 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://assets.inpinity.online/city/schemas/recipe.schema.json",
+    "title": "Recipe Schema",
+    "description": "Schema for offchain recipe definition files aligned to live CityCrafting recipe structures.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schemaVersion",
+      "kind",
+      "recipeId",
+      "name",
+      "outputKind",
+      "outputId",
+      "outputAmount",
+      "requiredFaction",
+      "requiredDistrictKind",
+      "requiredBuildingId",
+      "requiredTechTier",
+      "rarityTier",
+      "frameTier",
+      "requiresDiscovery",
+      "costs",
+      "metadataRevision",
+      "enabled"
+    ],
+    "properties": {
+      "schemaVersion": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "const": "recipeDefinition"
+      },
+      "recipeId": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "name": {
+        "$ref": "common.schema.json#/$defs/nameString"
+      },
+      "slug": {
+        "$ref": "common.schema.json#/$defs/slugString"
+      },
+      "description": {
+        "$ref": "common.schema.json#/$defs/longString"
+      },
+      "outputKind": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5
+      },
+      "outputId": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "outputAmount": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "requiredFaction": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "requiredDistrictKind": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "requiredBuildingId": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "requiredTechTier": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 6
+      },
+      "rarityTier": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5
+      },
+      "frameTier": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5
+      },
+      "requiresDiscovery": {
+        "type": "boolean"
+      },
+      "costs": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/resourceCostLine"
+        }
+      },
+      "resourceCostsRaw": {
+        "$ref": "common.schema.json#/$defs/resourceCostsRaw"
+      },
+      "metadataRevision": {
+        "$ref": "common.schema.json#/$defs/metadataRevision"
+      },
+      "enabled": {
+        "$ref": "common.schema.json#/$defs/booleanFlag"
+      },
+      "verificationStatus": {
+        "$ref": "common.schema.json#/$defs/verificationStatus"
+      },
+      "notes": {
+        "type": "string",
+        "maxLength": 2000
+      },
+      "image": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "external_url": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "media": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/mediaObject"
+        }
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/attributeObject"
+        }
+      },
+      "display": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "outputKindLabel": {
+            "type": "string"
+          },
+          "requiredFactionLabel": {
+            "type": "string"
+          },
+          "requiredDistrictKindLabel": {
+            "type": "string"
+          },
+          "requiredTechTierLabel": {
+            "type": "string"
+          },
+          "rarityLabel": {
+            "type": "string"
+          },
+          "frameTierLabel": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }

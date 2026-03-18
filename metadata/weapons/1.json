@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "weaponInstance",
+  "tokenStandard": "ERC721",
+  "network": "base",
+  "chainId": 8453,
+  "contractAddress": "0x6b3cDe1DdACDFB5dC060f10A94Ea52b237E5131F",
+  "tokenId": 1,
+  "weaponDefinitionId": 1,
+  "name": "Iron Sword #1",
+  "description": "Live crafted Iron Sword weapon instance from the Inpinity City system on Base Mainnet.",
+  "owner": "0xcBC1cf1159B4Db5B407684fdE0E9E635E9e3726f",
+  "weaponClass": 1,
+  "damageType": 1,
+  "rarityTier": 1,
+  "frameTier": 1,
+  "durability": 120,
+  "upgradeLevel": 0,
+  "metadataRevision": 1,
+  "originPlotId": 1,
+  "originFaction": 1,
+  "originDistrictKind": 1,
+  "craftedAt": 1773785613,
+  "visualVariant": 1,
+  "resonanceType": 1,
+  "craftSeed": "0xf3defc200a3c433fa4311e8d2c93973fb676ab018548ad72996bf370ffe4f28e",
+  "provenanceHash": "0x8b4ff296ed8860110fbd4266e4a1cbe8c7524cd372a784e0c6f8a6024a4de206",
+  "genesisEra": true,
+  "usedAether": false,
+  "image": "https://assets.inpinity.online/city/previews/weapons/1.png",
+  "external_url": "https://assets.inpinity.online/city/metadata/weapons/1.json",
+  "attributes": [
+    {
+      "trait_type": "Weapon Definition ID",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Weapon Class",
+      "value": "Sword"
+    },
+    {
+      "trait_type": "Damage Type",
+      "value": "Physical"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Frame Tier",
+      "value": "Basic"
+    },
+    {
+      "trait_type": "Durability",
+      "value": 120,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Upgrade Level",
+      "value": 0,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Origin Plot ID",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Origin Faction",
+      "value": "Pi"
+    },
+    {
+      "trait_type": "Origin District Kind",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Resonance Type",
+      "value": "Pi"
+    },
+    {
+      "trait_type": "Visual Variant",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Genesis Era",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Used Aether",
+      "value": "No"
+    },
+    {
+      "trait_type": "Crafted At",
+      "value": 1773785613,
+      "display_type": "date"
+    },
+    {
+      "trait_type": "Craft Seed",
+      "value": "0xf3defc200a3c433fa4311e8d2c93973fb676ab018548ad72996bf370ffe4f28e"
+    },
+    {
+      "trait_type": "Provenance Hash",
+      "value": "0x8b4ff296ed8860110fbd4266e4a1cbe8c7524cd372a784e0c6f8a6024a4de206"
+    }
+  ],
+  "composition": {
+    "type": "resourceBasedRecipe",
+    "recipeId": 101,
+    "intendedComponents": [
+      {
+        "componentDefinitionId": 1,
+        "name": "Iron Blade"
+      },
+      {
+        "componentDefinitionId": 2,
+        "name": "Reinforced Hilt"
+      }
+    ],
+    "notes": "Offchain descriptive composition. Current V1 onchain crafting remains resource-based."
+  },
+  "generatedAt": "2026-03-18T10:06:11.876Z",
+  "sourceContract": "0x6b3cDe1DdACDFB5dC060f10A94Ea52b237E5131F",
+  "sourceReadMethod": "weaponInstanceOf + ownerOf + data/definitions/weapons/*.json",
+  "sourceMode": "definitions",
+  "verificationStatus": "derived",
+  "notes": "Generated from live weapon instance reads plus local weapon definition fallback for token 1.",
+  "display": {
+    "weaponClassLabel": "Sword",
+    "damageTypeLabel": "Physical",
+    "rarityLabel": "Common",
+    "frameTierLabel": "Basic",
+    "originFactionLabel": "Pi",
+    "resonanceTypeLabel": "Pi"
+  },
+  "rarityPresentation": {
+    "rarityTier": 1,
+    "key": "common",
+    "name": "Common",
+    "frame": {
+      "path512": "assets/frames/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/common.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/common.png",
+      "masterSize": 512
+    }
+  },
+  "sourceFallbackReason": "Weapon definition chain reader not wired yet, using definitions fallback."
+}

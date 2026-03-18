@@ -1,0 +1,100 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://assets.inpinity.online/city/schemas/enchantment-item-definition.schema.json",
+    "title": "Enchantment Item Definition Schema",
+    "description": "Schema for offchain enchantment item definition files aligned to live CityEnchantmentItems definitions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schemaVersion",
+      "kind",
+      "enchantmentItemDefinitionId",
+      "name",
+      "enchantmentDefinitionId",
+      "level",
+      "rarityTier",
+      "burnOnUse",
+      "metadataRevision",
+      "enabled"
+    ],
+    "properties": {
+      "schemaVersion": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "const": "enchantmentItemDefinition"
+      },
+      "enchantmentItemDefinitionId": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 999
+      },
+      "name": {
+        "$ref": "common.schema.json#/$defs/nameString"
+      },
+      "slug": {
+        "$ref": "common.schema.json#/$defs/slugString"
+      },
+      "description": {
+        "$ref": "common.schema.json#/$defs/longString"
+      },
+      "enchantmentDefinitionId": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 999
+      },
+      "level": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "rarityTier": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5
+      },
+      "burnOnUse": {
+        "type": "boolean"
+      },
+      "metadataRevision": {
+        "$ref": "common.schema.json#/$defs/metadataRevision"
+      },
+      "enabled": {
+        "$ref": "common.schema.json#/$defs/booleanFlag"
+      },
+      "verificationStatus": {
+        "$ref": "common.schema.json#/$defs/verificationStatus"
+      },
+      "notes": {
+        "type": "string",
+        "maxLength": 2000
+      },
+      "image": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "external_url": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "media": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/mediaObject"
+        }
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/attributeObject"
+        }
+      },
+      "display": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rarityLabel": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
