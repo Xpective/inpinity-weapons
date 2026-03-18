@@ -1,80 +1,80 @@
 {
-    "schemaVersion": "1.0.0",
-    "kind": "componentAssetsManifest",
-    "baseAssetUrl": "https://assets.inpinity.online/city/assets/components/",
-    "items": [
-      {
-        "componentDefinitionId": 1,
-        "name": "Iron Blade",
-        "image": "https://assets.inpinity.online/city/assets/components/1.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/1-thumb.png",
-        "sourceHint": "assets/export/components/1.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 2,
-        "name": "Reinforced Hilt",
-        "image": "https://assets.inpinity.online/city/assets/components/2.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/2-thumb.png",
-        "sourceHint": "assets/export/components/2.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 3,
-        "name": "Crystal Core",
-        "image": "https://assets.inpinity.online/city/assets/components/3.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/3-thumb.png",
-        "sourceHint": "assets/export/components/3.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 4,
-        "name": "Bow Limb",
-        "image": "https://assets.inpinity.online/city/assets/components/4.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/4-thumb.png",
-        "sourceHint": "assets/export/components/4.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 5,
-        "name": "Bow String",
-        "image": "https://assets.inpinity.online/city/assets/components/5.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/5-thumb.png",
-        "sourceHint": "assets/export/components/5.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 6,
-        "name": "Plasma Chamber",
-        "image": "https://assets.inpinity.online/city/assets/components/6.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/6-thumb.png",
-        "sourceHint": "assets/export/components/6.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 7,
-        "name": "Energy Coil",
-        "image": "https://assets.inpinity.online/city/assets/components/7.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/7-thumb.png",
-        "sourceHint": "assets/export/components/7.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 8,
-        "name": "Stabilizer",
-        "image": "https://assets.inpinity.online/city/assets/components/8.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/8-thumb.png",
-        "sourceHint": "assets/export/components/8.png",
-        "enabled": true
-      },
-      {
-        "componentDefinitionId": 9,
-        "name": "Resonance Grip",
-        "image": "https://assets.inpinity.online/city/assets/components/9.png",
-        "thumbnail": "https://assets.inpinity.online/city/assets/components/9-thumb.png",
-        "sourceHint": "assets/export/components/9.png",
-        "enabled": true
-      }
-    ],
-    "notes": "Component asset manifest for live CityComponents content."
-  }
+  "schemaVersion": "1.0.0",
+  "kind": "componentAssetsManifest",
+  "baseAssetUrl": "https://assets.inpinity.online/city/assets/components/",
+  "items": [
+    {
+      "componentDefinitionId": 1,
+      "name": "Iron Blade",
+      "image": "https://assets.inpinity.online/city/assets/components/1.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/1-thumb.png",
+      "sourceHint": "assets/export/components/1.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 2,
+      "name": "Reinforced Hilt",
+      "image": "https://assets.inpinity.online/city/assets/components/2.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/2-thumb.png",
+      "sourceHint": "assets/export/components/2.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 3,
+      "name": "Crystal Core",
+      "image": "https://assets.inpinity.online/city/assets/components/3.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/3-thumb.png",
+      "sourceHint": "assets/export/components/3.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 4,
+      "name": "Bow Limb",
+      "image": "https://assets.inpinity.online/city/assets/components/4.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/4-thumb.png",
+      "sourceHint": "assets/export/components/4.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 5,
+      "name": "Bow String",
+      "image": "https://assets.inpinity.online/city/assets/components/5.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/5-thumb.png",
+      "sourceHint": "assets/export/components/5.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 6,
+      "name": "Plasma Chamber",
+      "image": "https://assets.inpinity.online/city/assets/components/6.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/6-thumb.png",
+      "sourceHint": "assets/export/components/6.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 7,
+      "name": "Energy Coil",
+      "image": "https://assets.inpinity.online/city/assets/components/7.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/7-thumb.png",
+      "sourceHint": "assets/export/components/7.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 8,
+      "name": "Stabilizer",
+      "image": "https://assets.inpinity.online/city/assets/components/8.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/8-thumb.png",
+      "sourceHint": "assets/export/components/8.png",
+      "enabled": true
+    },
+    {
+      "componentDefinitionId": 9,
+      "name": "Resonance Grip",
+      "image": "https://assets.inpinity.online/city/assets/components/9.png",
+      "thumbnail": "https://assets.inpinity.online/city/assets/components/9-thumb.png",
+      "sourceHint": "assets/export/components/9.png",
+      "enabled": true
+    }
+  ],
+  "notes": "Component asset manifest for live CityComponents content."
+}
