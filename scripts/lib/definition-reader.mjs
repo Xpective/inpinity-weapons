@@ -65,6 +65,27 @@ export async function readEnchantmentItemDefinitionFromFile(itemId) {
   };
 }
 
+export async function readMateriaItemDefinitionFromFile(itemId) {
+  const filePath = path.join(
+    "data",
+    "definitions",
+    "materia-items",
+    `${String(itemId).padStart(3, "0")}-${getMateriaItemSlug(itemId)}.json`
+  );
+
+  const json = await readJsonFile(filePath);
+
+  return {
+    itemId: Number(json.materiaItemDefinitionId),
+    materiaDefinitionId: Number(json.materiaDefinitionId),
+    level: Number(json.level),
+    rarityTier: Number(json.rarityTier),
+    burnOnUse: Boolean(json.burnOnUse),
+    enabled: Boolean(json.enabled),
+    _sourceFile: filePath
+  };
+}
+
 function getComponentSlug(id) {
   const map = {
     1: "iron-blade",
@@ -104,5 +125,17 @@ function getEnchantmentItemSlug(itemId) {
 
   const slug = map[Number(itemId)];
   if (!slug) throw new Error(`No enchantment item slug mapping found for id ${itemId}`);
+  return slug;
+}
+
+function getMateriaItemSlug(itemId) {
+  const map = {
+    1: "fire-materia-item",
+    2: "resonance-materia-item",
+    3: "stability-materia-item"
+  };
+
+  const slug = map[Number(itemId)];
+  if (!slug) throw new Error(`No materia item slug mapping found for id ${itemId}`);
   return slug;
 }

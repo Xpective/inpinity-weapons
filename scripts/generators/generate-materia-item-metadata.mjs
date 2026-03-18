@@ -2,6 +2,8 @@ import path from "node:path";
 import { CONTRACTS } from "../config/contracts.mjs";
 import { GENERATOR_DEFAULTS } from "../config/generator-defaults.mjs";
 import { readMateriaItemDefinition } from "../lib/chain-reader.mjs";
+import { readMateriaItemDefinitionFromFile } from "../lib/definition-reader.mjs";
+import { resolveWithSource } from "../lib/source-resolver.mjs";
 import { resolveMateriaItemAsset } from "../lib/asset-resolver.mjs";
 import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
@@ -13,23 +15,36 @@ const network = getArgValue("--network", GENERATOR_DEFAULTS.network);
 const dryRun = hasFlag("--dry-run");
 const fromId = Number(getArgValue("--from", "1"));
 const toId = Number(getArgValue("--to", "3"));
+const sourceMode = getArgValue("--source", "auto");
 
 const report = {
   generatedAt: new Date().toISOString(),
   network,
   chainId: CONTRACTS[network].chainId,
+  generator: "generate-materia-item-metadata",
+  sourceModeRequested: sourceMode,
   summary: {
-    materiaItemsGenerated: 0
+    materiaItemsGenerated: 0,
+    generatedFromChain: 0,
+    generatedFromDefinitions: 0
   },
   warnings: []
 };
 
 for (let itemId = fromId; itemId <= toId; itemId += 1) {
-  const definition = await readMateriaItemDefinition({
-    network,
-    contractAddress: CONTRACTS[network].cityMateriaItems,
-    itemId
+  const resolved = await resolveWithSource({
+    sourceMode,
+    readFromChain: async () =>
+      readMateriaItemDefinition({
+        network,
+        contractAddress: CONTRACTS[network].cityMateriaItems,
+        itemId
+      }),
+    readFromDefinitions: async () => readMateriaItemDefinitionFromFile(itemId),
+    onWarning: (msg) => report.warnings.push(`Materia item ${itemId}: ${msg}`)
   });
+
+  const definition = resolved.data;
 
   if (!definition.itemId) {
     report.warnings.push(`Materia item ${itemId} returned empty definition.`);
@@ -101,9 +116,23 @@ for (let itemId = fromId; itemId <= toId; itemId += 1) {
         value: definition.enabled ? "Yes" : "No"
       }
     ],
-    verificationStatus: "confirmed",
-    notes: `Generated from live CityMateriaItems materiaItemDefinitionOf(${definition.itemId}) on ${network}.`
+    generatedAt: new Date().toISOString(),
+    sourceContract: CONTRACTS[network].cityMateriaItems,
+    sourceReadMethod:
+      resolved.sourceMode === "chain"
+        ? "materiaItemDefinitionOf"
+        : "data/definitions/materia-items/*.json",
+    sourceMode: resolved.sourceMode,
+    verificationStatus: resolved.sourceMode === "chain" ? "confirmed" : "derived",
+    notes:
+      resolved.sourceMode === "chain"
+        ? `Generated from live CityMateriaItems materiaItemDefinitionOf(${definition.itemId}) on ${network}.`
+        : `Generated from local materia item definition fallback for id ${definition.itemId}.`
   };
+
+  if (resolved.fallbackReason) {
+    metadata.sourceFallbackReason = resolved.fallbackReason;
+  }
 
   const merged = mergeObjects(metadata, override);
 
@@ -113,6 +142,11 @@ for (let itemId = fromId; itemId <= toId; itemId += 1) {
   }
 
   report.summary.materiaItemsGenerated += 1;
+  if (resolved.sourceMode === "chain") {
+    report.summary.generatedFromChain += 1;
+  } else {
+    report.summary.generatedFromDefinitions += 1;
+  }
 }
 
 if (GENERATOR_DEFAULTS.writeReport && !dryRun) {
@@ -123,6 +157,10 @@ console.log(
   dryRun
     ? `Dry run complete. Materia items checked: ${report.summary.materiaItemsGenerated}`
     : `Materia item metadata generation complete. Written: ${report.summary.materiaItemsGenerated}`
+);
+
+console.log(
+  `Sources used: chain=${report.summary.generatedFromChain}, definitions=${report.summary.generatedFromDefinitions}`
 );
 
 if (report.warnings.length > 0) {

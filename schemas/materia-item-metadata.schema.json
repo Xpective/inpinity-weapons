@@ -65,6 +65,24 @@
           "$ref": "common.schema.json#/$defs/mediaObject"
         }
       },
+      "generatedAt": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "sourceContract": {
+        "$ref": "common.schema.json#/$defs/hexAddress"
+      },
+      "sourceReadMethod": {
+        "type": "string",
+        "minLength": 1
+      },
+      "sourceMode": {
+        "type": "string",
+        "enum": ["chain", "definitions", "auto"]
+      },
+      "sourceFallbackReason": {
+        "type": "string"
+      },
       "verificationStatus": {
         "$ref": "common.schema.json#/$defs/verificationStatus"
       },

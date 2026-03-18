@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-18T01:09:22.762Z",
+  "generatedAt": "2026-03-18T01:11:29.794Z",
   "network": "base",
   "chainId": 8453,
-  "generator": "generate-enchantment-item-metadata",
+  "generator": "generate-materia-item-metadata",
   "sourceModeRequested": "auto",
   "summary": {
-    "enchantmentItemsGenerated": 3,
+    "materiaItemsGenerated": 3,
     "generatedFromChain": 3,
     "generatedFromDefinitions": 0
   },
