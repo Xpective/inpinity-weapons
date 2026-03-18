@@ -1,83 +1,15 @@
 {
-  "generatedAt": "2026-03-18T01:21:05.751Z",
-  "generator": "generate-all-metadata",
-  "network": "default",
+  "generatedAt": "2026-03-18T10:06:09.818Z",
+  "network": "base",
+  "chainId": 8453,
+  "generator": "generate-weapon-instance-metadata",
   "sourceModeRequested": "auto",
-  "dryRun": false,
-  "completedGenerators": [
-    {
-      "label": "components",
-      "script": "scripts/generators/generate-component-metadata.mjs",
-      "reportFound": true,
-      "generatedAt": "2026-03-18T01:21:06.109Z",
-      "sourceModeRequested": "auto",
-      "summary": {
-        "componentsGenerated": 9,
-        "generatedFromChain": 9,
-        "generatedFromDefinitions": 0
-      }
-    },
-    {
-      "label": "blueprints",
-      "script": "scripts/generators/generate-blueprint-metadata.mjs",
-      "reportFound": true,
-      "generatedAt": "2026-03-18T01:21:22.928Z",
-      "sourceModeRequested": "auto",
-      "summary": {
-        "blueprintsGenerated": 3,
-        "generatedFromChain": 3,
-        "generatedFromDefinitions": 0
-      }
-    },
-    {
-      "label": "enchantment-items",
-      "script": "scripts/generators/generate-enchantment-item-metadata.mjs",
-      "reportFound": true,
-      "generatedAt": "2026-03-18T01:21:33.234Z",
-      "sourceModeRequested": "auto",
-      "summary": {
-        "enchantmentItemsGenerated": 3,
-        "generatedFromChain": 3,
-        "generatedFromDefinitions": 0
-      }
-    },
-    {
-      "label": "materia-items",
-      "script": "scripts/generators/generate-materia-item-metadata.mjs",
-      "reportFound": true,
-      "generatedAt": "2026-03-18T01:21:35.355Z",
-      "sourceModeRequested": "auto",
-      "summary": {
-        "materiaItemsGenerated": 3,
-        "generatedFromChain": 3,
-        "generatedFromDefinitions": 0
-      }
-    },
-    {
-      "label": "weapons",
-      "script": "scripts/generators/generate-weapon-instance-metadata.mjs",
-      "reportFound": true,
-      "generatedAt": "2026-03-18T01:21:41.646Z",
-      "sourceModeRequested": "auto",
-      "summary": {
-        "weaponsGenerated": 1,
-        "generatedFromChain": 0,
-        "generatedFromDefinitions": 1
-      }
-    }
-  ],
   "summary": {
-    "totalGeneratorsRun": 5,
-    "totalWarnings": 1,
-    "componentsGenerated": 9,
-    "blueprintsGenerated": 3,
-    "enchantmentItemsGenerated": 3,
-    "materiaItemsGenerated": 3,
     "weaponsGenerated": 1,
-    "generatedFromChain": 18,
+    "generatedFromChain": 0,
     "generatedFromDefinitions": 1
   },
   "warnings": [
-    "[weapons] Weapon token 1, definition 1: Chain read failed, falling back to definitions: Weapon definition chain reader not wired yet, using definitions fallback."
+    "Weapon token 1, definition 1: Chain read failed, falling back to definitions: Weapon definition chain reader not wired yet, using definitions fallback."
   ]
 }

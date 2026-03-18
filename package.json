@@ -27,7 +27,10 @@
         "generate:materia-items:auto": "node scripts/generators/generate-materia-item-metadata.mjs --source=auto",
         "generate:weapons:auto": "node scripts/generators/generate-weapon-instance-metadata.mjs --source=auto",
         "scaffold": "node scripts/scaffold/scaffold.mjs",
-        "sync": "node scripts/sync/sync-from-chain.mjs" 
+        "sync": "node scripts/sync/sync-from-chain.mjs",
+        "test:rarity-assets": "node scripts/lib/test-rarity-asset-resolver.mjs",
+
+        "generate:weapons": "node scripts/generators/generate-weapon-instance-metadata.mjs"
     },
     "keywords": [
         "inpinity",

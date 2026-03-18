@@ -121,7 +121,7 @@
     ],
     "notes": "Offchain descriptive composition. Current V1 onchain crafting remains resource-based."
   },
-  "generatedAt": "2026-03-18T01:21:42.513Z",
+  "generatedAt": "2026-03-18T10:06:11.876Z",
   "sourceContract": "0x6b3cDe1DdACDFB5dC060f10A94Ea52b237E5131F",
   "sourceReadMethod": "weaponInstanceOf + ownerOf + data/definitions/weapons/*.json",
   "sourceMode": "definitions",
@@ -134,6 +134,22 @@
     "frameTierLabel": "Basic",
     "originFactionLabel": "Pi",
     "resonanceTypeLabel": "Pi"
+  },
+  "rarityPresentation": {
+    "rarityTier": 1,
+    "key": "common",
+    "name": "Common",
+    "frame": {
+      "path512": "assets/frames/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/frames/512/common.png",
+      "transparentCenter": true,
+      "masterSize": 512
+    },
+    "background": {
+      "path512": "assets/backgrounds/512/common.png",
+      "publicUrl": "https://assets.inpinity.online/city/assets/backgrounds/512/common.png",
+      "masterSize": 512
+    }
   },
   "sourceFallbackReason": "Weapon definition chain reader not wired yet, using definitions fallback."
 }

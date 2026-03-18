@@ -9,6 +9,7 @@ import { readOptionalOverride } from "../lib/override-resolver.mjs";
 import { mergeObjects, writeJsonFile } from "../lib/metadata-builder.mjs";
 import { writeSyncReport } from "../lib/report-writer.mjs";
 import { hasFlag, getArgValue } from "../lib/cli-utils.mjs";
+import { getRarityAssets } from "../lib/rarity-asset-resolver.mjs";
 import {
   getDamageTypeLabel,
   getFrameTierLabel,
@@ -107,6 +108,7 @@ for (let tokenId = fromId; tokenId <= toId; tokenId += 1) {
   const defaults = getDefinitionDefaultsFromDefinition(def);
   const asset = await resolveWeaponAsset(instance.weaponDefinitionId);
   const override = await readOptionalOverride("weapons", tokenId);
+  const rarityAssets = await getRarityAssets(instance.rarityTier);
 
   if (!asset) {
     report.warnings.push(
@@ -255,6 +257,22 @@ for (let tokenId = fromId; tokenId <= toId; tokenId += 1) {
       frameTierLabel: await getFrameTierLabel(instance.frameTier),
       originFactionLabel: getOriginFactionLabel(instance.originFaction),
       resonanceTypeLabel: await getResonanceTypeLabel(instance.resonanceType)
+    },
+    rarityPresentation: {
+      rarityTier: rarityAssets.rarityTier,
+      key: rarityAssets.key,
+      name: rarityAssets.name,
+      frame: {
+        path512: rarityAssets.frame.path512,
+        publicUrl: rarityAssets.frame.publicUrl,
+        transparentCenter: rarityAssets.frame.transparentCenter,
+        masterSize: rarityAssets.frame.masterSize
+      },
+      background: {
+        path512: rarityAssets.background.path512,
+        publicUrl: rarityAssets.background.publicUrl,
+        masterSize: rarityAssets.background.masterSize
+      }
     }
   };
 
