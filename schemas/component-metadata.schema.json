@@ -1,0 +1,70 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://assets.inpinity.online/city/schemas/component-metadata.schema.json",
+    "title": "Component Metadata Schema",
+    "description": "Schema for published ERC1155 component metadata aligned to live CityComponents definitions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schemaVersion",
+      "kind",
+      "tokenStandard",
+      "network",
+      "chainId",
+      "contractAddress",
+      "componentDefinitionId",
+      "name",
+      "description",
+      "image",
+      "external_url",
+      "attributes",
+      "verificationStatus"
+    ],
+    "properties": {
+      "schemaVersion": { "type": "string", "minLength": 1 },
+      "kind": { "const": "componentMetadata" },
+      "tokenStandard": { "const": "ERC1155" },
+      "network": { "type": "string", "minLength": 1 },
+      "chainId": { "type": "integer", "minimum": 1 },
+      "contractAddress": {
+        "$ref": "common.schema.json#/$defs/hexAddress"
+      },
+      "componentDefinitionId": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 999
+      },
+      "name": {
+        "$ref": "common.schema.json#/$defs/nameString"
+      },
+      "description": {
+        "$ref": "common.schema.json#/$defs/longString"
+      },
+      "image": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "external_url": {
+        "$ref": "common.schema.json#/$defs/uriString"
+      },
+      "attributes": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "common.schema.json#/$defs/attributeObject"
+        }
+      },
+      "media": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/mediaObject"
+        }
+      },
+      "verificationStatus": {
+        "$ref": "common.schema.json#/$defs/verificationStatus"
+      },
+      "notes": {
+        "type": "string",
+        "maxLength": 2000
+      }
+    }
+  }
